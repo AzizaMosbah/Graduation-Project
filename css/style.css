@@ -112,12 +112,19 @@ nav .nav-links ul li::after {
     display: block;
     margin: auto;
     margin-top: 1px;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 .nav-links ul li:hover::after {
     width: 100%;
 }
 nav .nav-links li:hover a {
+    color: var(--primary-color);
+}
+nav li a.active {
     color: var(--primary-color);
 }
 nav .fa-solid {
@@ -185,7 +192,6 @@ nav .fa-bars {
     .buttons {
         width: 100%;
         margin-left: 20px;
-        margin-top: -80px;
     }
 }
 /* Start Landing */
@@ -471,7 +477,7 @@ nav .fa-bars {
         width: 100%;
     }
     .dentist__radiology .bg__img {  
-        min-height: 235vh;
+        min-height: 240vh;
     }
     .heading {
         font-size: 22px;
@@ -533,13 +539,12 @@ footer .fa-square-x-twitter {
     grid-gap: 30px;
 } */
 
-  
-
 /*----------------- Faq Page ------------------*/
 h1 {
     margin: 0;
 }
 .main-content {
+    width: 100%;
 	padding: 50px;
     position: relative;
     overflow: hidden;
@@ -569,6 +574,20 @@ h1 {
         padding: 0;
     }
 }
+@media (max-width: 900px) {
+    .main-content {
+        padding: 20px;
+    }
+    .main-content h1 {
+        font-size: 24px;
+        padding-top: 30px;
+    }
+}
+@media (min-width: 576px) {
+    .container, .container-sm {
+      max-width: 100%;
+    }
+}
 .accordion-header {
     border: 1px solid #E1E1E1;
 }
@@ -585,7 +604,6 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-right: 10px;
 }
 .accordion-item{
 	border: 0px !important;
@@ -641,10 +659,11 @@ h1 {
     text-align: center;
 }
 .sign__in .right__side h2 {
-    font-size: 43px;
+    font-size: 35px;
     font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 .sign__in .right__side p {
     font-size: 16px;
@@ -653,15 +672,18 @@ h1 {
 }
 .sign__in .right__side p,
 .sign__in .right__side input,
-.sign__in .right__side .forget__password {
+.sign__in .right__side .forget__password,
+select {
     margin-bottom: 25px;
 }
 .sign__in .right__side form {
     width: 100%;
 }
-.sign__in .right__side input {
+.sign__in .right__side input,
+select,
+input {
     width: 70%;
-    padding: 15px 20px 15px 15px;
+    padding: 13px 20px 13px 15px;
     background-color: #fff;
     border: none;
     outline: none;
@@ -672,7 +694,11 @@ h1 {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.sign__in .right__side input::placeholder {
+select {
+    width: 100%;
+}
+input::placeholder,
+textarea::placeholder {
     font-size: 14px;
 }
 /* Show & Hide Password */
@@ -730,18 +756,18 @@ h1 {
     }
 }
 /* End Show & Hide Password */
-.sign__in .right__side .forget__password {
+.right__side .forget__password {
     margin-top: -10px;
     font-size: 16px;
     font-weight: 400;
     text-align: left;
     padding-left: 120px;
 }
-.sign__in .right__side a {
+.right__side a {
     text-decoration: none;
     color: var(--secondary-color);
 }
-.sign__in .in__submit input[type="submit"] {
+.in__submit input[type="submit"] {
     background-color: var(--secondary-color);
     color: #fff;
     font-size: 20px;
@@ -749,13 +775,13 @@ h1 {
     cursor: pointer;
     border: 1px solid var(--secondary-color);
 }
-.sign__in .dont__account p {
+.dont__account p {
     font-size: 16px;
     font-weight: 400;
     color: #000;
     margin-top: -5px;
 }
-.sign__in .dont__account a {
+.dont__account a {
     margin-left: 5px;
 }
 /**/
@@ -808,4 +834,116 @@ h1 {
 }
 .password__error {
     margin: -17px 0 20px -113px;
+}
+
+
+
+.getTouch {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 50px;
+    margin-top: 10px;
+}
+.getTouch .left {
+    width: 65%;
+}
+.getTouch .left h3 {
+    font-size: 35px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+.getTouch .left p {
+    color: #B3B3B3;
+}
+.getTouch .left div {
+    margin-bottom: 30px;
+}
+.getTouch input {
+    width: 80%;
+}
+.getTouch .right {
+    width: 35%;
+    margin-left: 30px;
+}
+.getTouch .right img {
+    width: 100%;
+  margin-left: -60px;
+}
+.getTouch .right .contact {
+    width: 100%;
+    margin-top: 20px;
+}
+.getTouch .right .contact div:not(:last-child) {
+    margin-bottom: 10px;
+}
+.getTouch .contact i {
+    width: 40px;
+    padding: 10px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.getTouch .contact i:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+
+}
+.getTouch .contact span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+textarea {
+    border: none;
+    outline: none;
+    width: 80%;
+    min-height: 310px;
+    padding: 10px 15px;
+    resize: none;
+    border: 1px solid #A5A5A5;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+@media (max-width: 1199px){
+    .getTouch {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .getTouch .left,
+    .getTouch .right {
+        width: 100%;
+    }
+    .getTouch img {
+        display: none;
+    }
+    .getTouch input,
+    .getTouch textarea {
+        width: 100%;
+    }
+    .getTouch .right {
+        margin-left: 0;
+        margin-top: -20px;
+        margin-bottom: 10px;
+        margin: -20px 0 10px 0;
+    }
+
 }

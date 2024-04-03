@@ -21,16 +21,20 @@
     <div class="logo">
       <a href="index.html">DENTAS<span>DIAGNOSE</span></a>
     </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="faq.html" class="active">FAQ</a>
-      <a href="contact.html">Contact us</a>
+    <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+        <div class="buttons">
+          <button class="btn" id="signIn">sign in</button>
+          <button class="btn" id="signUp">sign up</button>
+        </div>
     </div>
-    <div class="buttons">
-      <button class="btn" id="signIn">sign in</button>
-      <button class="btn" id="signUp">sign up</button>
-    </div>
+    <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </nav>
   <div class="main-content">
     <div class="container">
@@ -140,7 +144,6 @@
     </div>
   </footer>
   <!-- <script src="js/jquery.min.js"></script> -->
-  <script src="js/all.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/denta.js"></script>
 </body>

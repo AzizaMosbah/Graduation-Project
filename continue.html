@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentaDiagnose - Home</title>
+  <!-- Normalize Css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Library -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Main css File -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">DENTAS<span>DIAGNOSE</span></a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+            <div class="buttons">
+                <button class="btn" id="signIn">sign in</button>
+                <button class="btn" id="signUp">sign up</button>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="sign__in sign__up">
+        <div class="left__side">
+            <img src="images/login.svg" alt="SignIn">
+        </div>
+        <div class="right__side">
+            <h2>Sign Up</h2>
+            <p>Create your new account</p>
+            <form>
+                <div class="in__name">
+                    <select class="form-control" id="exampleSelectVendor" name="city">
+                        <option selected="selected">Gharbia</option>
+                        <option>Alexandria</option>
+                        <option>Ismailia</option>
+                        <option>Kafr El-Sheikh</option>
+                        <option>Aswan</option>
+                        <option>Asyut</option>
+                        <option>Luxor</option>
+                        <option>New Valley</option>
+                        <option>North Sinai</option>
+                        <option>Beheira</option>
+                        <option>Bani Sweif</option>
+                        <option>Port Said</option>
+                        <option>Red Sea</option>
+                        <option>Giza</option>
+                        <option>Dakahlia</option>
+                        <option>South Sinai</option>
+                        <option>Damietta</option>
+                        <option>Sohag</option>
+                        <option>Suez</option>
+                        <option>Sharqiya</option>
+                        <option>Fayoum</option>
+                        <option selected="selected">Cairo</option>
+                        <option>Qalyubia</option>
+                        <option>Qena</option>
+                        <option>Matruh</option>
+                        <option>Menoufia</option>
+                        <option>Minya</option>
+                    </select>
+                </div>
+                <div class="in__name">
+                    <select class="form-control" id="exampleSelectVendor" name="city">
+                        <option>Gharbia</option>
+                        <option>Alexandria</option>
+                        <option>Ismailia</option>
+                        <option>Kafr El-Sheikh</option>
+                        <option>Aswan</option>
+                        <option>Asyut</option>
+                        <option>Luxor</option>
+                        <option>New Valley</option>
+                        <option>North Sinai</option>
+                        <option>Beheira</option>
+                        <option>Bani Sweif</option>
+                        <option>Port Said</option>
+                        <option>Red Sea</option>
+                        <option>Giza</option>
+                        <option>Dakahlia</option>
+                        <option>South Sinai</option>
+                        <option>Damietta</option>
+                        <option>Sohag</option>
+                        <option>Suez</option>
+                        <option>Sharqiya</option>
+                        <option>Fayoum</option>
+                        <option  selected="selected">Cairo</option>
+                        <option>Qalyubia</option>
+                        <option>Qena</option>
+                        <option>Matruh</option>
+                        <option>Menoufia</option>
+                        <option>Minya</option>
+                    </select>
+                </div>
+                <div class="in__email">
+                    <input type="text" name="address" id="address" placeholder="Your Address">
+                </div>
+                <div class="in__email">
+                    <input type="date" name="date" id="date" placeholder="Avaliable Time (Days - Time)">
+                </div>
+                <div class="in__email">
+                    <input type="file" id="personalPhoto" name="personalPhoto">
+                </div>
+                <div class="in__email">
+                    <input type="file" id="syndicatePhoto" name="syndicatePhoto">
+                </div>
+                <div class="in__submit">
+                    <input type="submit" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+  <script src="js/denta.js"></script>
+</body>
+</html>
