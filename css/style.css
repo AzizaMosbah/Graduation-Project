@@ -380,14 +380,16 @@ nav .fa-bars {
 }
 .dentist__radiology .bg__img {
     background-image: url(../images/Dentist.jpg);    
-    min-height: 100vh;
     width: 100%;
+    height: 700px;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     margin-top: 30px;
     position: relative;
 }
 .bg__img .all {
+    width: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -395,6 +397,7 @@ nav .fa-bars {
     align-items: center;
 }
 .dentist__radiology .dentist {
+    width: 100%;
     padding: 25px 50px;
     text-align: left;
 }
@@ -413,6 +416,7 @@ nav .fa-bars {
 }
 .dentist__radiology .card {
     width: 25%;
+    height: 210px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
@@ -443,6 +447,7 @@ nav .fa-bars {
 }
 .card .info p {
     margin-bottom: 20px;
+    font-size: 14px;
 }
 .card .info p:last-child {
     margin-bottom: 30px;
@@ -452,7 +457,8 @@ nav .fa-bars {
     text-decoration: none;
     color: #fff;
     background-color: var(--primary-color);
-    padding: 10px 25px;
+    padding: 10px 20px;
+    font-size: 14px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -466,21 +472,43 @@ nav .fa-bars {
     }
     .dentist__radiology .card {
         width: 48%;
+        height: 205px;
         margin-bottom: 10px;
     }
     .dentist__radiology .dentist {
         padding: 10px 20px;
     }
+    .dentist__radiology .card img {
+        width: 30%;
+    }
+    .dentist__radiology .card .info {
+        padding: 20px 20px;
+        width: 70%;
+    }
+    .dentist__radiology .bg__img {
+        height: 125vh;
+    }
 }
 @media (max-width: 767px) {
-    .dentist__radiology .card {
-        width: 100%;
+    .dentist__radiology .bg__img {
+        height: 125vh;
     }
-    .dentist__radiology .bg__img {  
-        min-height: 240vh;
+    .dentist__radiology .card img {
+        width: 40%;
+    }
+    .dentist__radiology .card .info {
+        width: 60%;
     }
     .heading {
         font-size: 22px;
+    }
+}
+@media (max-width: 650px) {
+    .dentist__radiology .card {
+        width: 100%;
+    } 
+    .dentist__radiology .bg__img {  
+        height: 230vh;
     }
 }
 /* Start Footer */
@@ -513,9 +541,9 @@ footer .list p,
     font-size: 18px;
     font-weight: 400;
 }
-footer .social svg {
+footer .social i {
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 19px;
 }
 footer .fa-square-facebook {
     color: #3b5998;
@@ -582,6 +610,9 @@ h1 {
         font-size: 24px;
         padding-top: 30px;
     }
+    .accordion-button {
+        padding: 0.5px;
+    }
 }
 @media (min-width: 576px) {
     .container, .container-sm {
@@ -617,6 +648,9 @@ h1 {
 }
 .accordion-button:focus {
     box-shadow: none;
+}
+.accordion-button::after {
+    margin-right: 10px;
 }
 /* Faq Footer */
 .footer__faq {
