@@ -4,6 +4,11 @@
     --secondary-color: #265073;
 }
 /*------------------ Component --------------------*/
+button {
+    border: none;
+    outline: none;
+    background-color: none;
+}
 .btn {
     border: none;
     outline: none;
@@ -353,7 +358,7 @@ nav .fa-bars {
     margin-top: 10px;
     color: #777;
 }
-@media (max-width:767px) {
+@media (max-width:1199px) {
     .services .row {
         flex-wrap: wrap;
     }
@@ -381,20 +386,22 @@ nav .fa-bars {
 .dentist__radiology .bg__img {
     background-image: url(../images/Dentist.jpg);    
     width: 100%;
-    height: 700px;
+    height: 77%;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     margin-top: 30px;
-    position: relative;
-}
-.bg__img .all {
-    width: 100%;
     position: absolute;
+    z-index: -1;
+}
+.dentist__radiology .all {
+    width: 100%;
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px 0;
 }
 .dentist__radiology .dentist {
     width: 100%;
@@ -486,13 +493,10 @@ nav .fa-bars {
         width: 70%;
     }
     .dentist__radiology .bg__img {
-        height: 125vh;
+        height: 85%;
     }
 }
 @media (max-width: 767px) {
-    .dentist__radiology .bg__img {
-        height: 125vh;
-    }
     .dentist__radiology .card img {
         width: 40%;
     }
@@ -508,7 +512,7 @@ nav .fa-bars {
         width: 100%;
     } 
     .dentist__radiology .bg__img {  
-        height: 230vh;
+        height: 91%;
     }
 }
 /* Start Footer */
@@ -632,6 +636,9 @@ h1 {
 	box-shadow: 0 2px 25px -3px rgba(0, 0, 0, 0.1);
 	margin-bottom: 10px;
 }
+.accordion-button {
+    padding: 1rem 0.75rem;
+}
 .circle-icon {
 	height: 50px;
 	width: 50px;
@@ -639,9 +646,14 @@ h1 {
 	justify-content: center;
 	align-items: center;
 }
+@media (max-width:767px) {
+    .circle-icon svg {
+        width: 21px;
+    }
+}
 .accordion-item{
 	border: 0px !important;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .accordion-button:not(.collapsed){
 	border: 0px!important;
@@ -681,12 +693,13 @@ h1 {
     height: calc(100vh - 80.8px);
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 15px 50px;
     position: relative;
     overflow: hidden;
 }
 .sign__in .left__side {
-    width: 50%;
+    width: 60%;
     height: 100%;
 }
 .sign__in .left__side img {
@@ -694,17 +707,9 @@ h1 {
     margin: auto;
 }
 .sign__in .right__side {
-    width: 50%;
+    width: 40%;
     margin: auto;
     text-align: center;
-    position: absolute;
-    right: -6.2%;
-    top: 50%;
-    transform: translate(-4%,-50%);
-    -webkit-transform: translate(-4%,-50%);
-    -moz-transform: translate(-4%,-50%);
-    -ms-transform: translate(-4%,-50%);
-    -o-transform: translate(-4%,-50%);
 }
 .sign__in .right__side h2 {
     font-size: 35px;
@@ -732,7 +737,7 @@ select {
 select,
 input,
 .inputfile + label {
-    width: 70%;
+    width: 100%;
     padding: 13px 20px 13px 15px;
     background-color: transparent;
     border: none;
@@ -747,9 +752,7 @@ input,
 select {
     width: 100%;
     background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearence: none;
+    -appearence: none;
 }
 .sign__up .in__name,
 .sign__up .in__email {
@@ -772,7 +775,30 @@ select {
 .sign__up .in__email .icon svg{
     fill: #5f5f5f; 
 }
-
+.sign__up .sign__btn {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 13px 20px 13px 15px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    border: 1px solid #A5A5A5;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+.sign__up .sign__btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+@media(max-width:400px) {
+    .sign__up .sign__btn {
+        font-size: 14px;
+    }
+}
 #meeting-time {
     padding-right: 8.5px;
 }
@@ -788,7 +814,7 @@ textarea::placeholder {
 .in__password .password__icon div {
     position: absolute;
     top: 35%;
-    left: 81%;
+    left: 95%;
     transform: translate(-50%, -50%);
 }
 .show__hide {
@@ -840,7 +866,7 @@ textarea::placeholder {
     font-size: 16px;
     font-weight: 400;
     text-align: left;
-    padding-left: 120px;
+    padding-left: 10px;
 }
 .right__side a {
     text-decoration: none;
@@ -866,7 +892,7 @@ textarea::placeholder {
 /**/
 .sign__up .in__name,
 .sign__up .btns {
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -909,12 +935,40 @@ textarea::placeholder {
     font-size: 14px;
 }
 .email__error {
-    margin: -17px 0 20px -374px;
+    margin: -17px 0 20px -252px;
 }
 .password__error {
-    margin: -17px 0 20px -113px;
+    margin: -17px 0 20px -4px;
 }
 
+@media(max-width:1199px){
+    .sign__in {
+        padding: 15px 20px;
+        height: auto;
+    }
+    .sign__in .left__side {
+        width: 100%;
+    }
+    .sign__in .left__side img {
+        width: 100%;
+    }
+    .sign__in .right__side {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .email__error,
+    .password__error {
+        margin: -17px 0 20px 10px;
+        text-align: left;
+    }
+    .sign__up .btn:hover::before {
+        box-shadow: none;
+    }
+    .sign__up .btn {
+        border: 1px solid var(--secondary-color);
+        color: var(--secondary-color);
+    }
+}
 
 
 .getTouch {
@@ -1031,12 +1085,6 @@ textarea {
 
 
 
-
-
-
-
-
-
 .inputfile {
     width: 0.1px;
     height: 0.1px;
@@ -1069,4 +1117,45 @@ textarea {
     color: #B3B3B3;
 }
 
+.otp .right__side {
+    width: 40%;
+}
+.otp .left__side {
+    width: 60%;
+}
+.otp .input-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
+}
+
+.otp .input-field input {
+    width: 10%;
+}
+.otp .input-field input::placeholder {
+    text-align: center;
+}
+.otp .enterIt {
+    margin-top: -20px;
+}
+
+.otp .forget {
+    color: #B3B3B3;
+    margin-bottom: 25px;
+}
+.otp .forget a {
+    margin-left: 5px;
+}
+@media (max-width: 1199px){
+    .otp {
+        flex-direction: column;
+    }
+    .otp .right__side {
+        width: 100%;
+    }
+    .otp .left__side {
+        width: 100%;
+    }
+
+}
