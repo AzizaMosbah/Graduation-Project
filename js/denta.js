@@ -111,16 +111,24 @@ hidePasswordIcons.forEach(function(hideIcon, index) {
 /*
   Go To Sign In Page
 */
-document.getElementById("signIn").addEventListener("click", function() {
-    window.location.href = "signin.html";
-});
 
+var signInButton = document.getElementById("signIn");
+if (signInButton) {
+    signInButton.addEventListener("click", function() {
+        window.location.href = "signin.html";
+    });
+}
 /*
   Go To Sign Up Page
 */
-document.getElementById("signUp").addEventListener("click", function() {
-    window.location.href = "signup.html";
-});
+
+var signUpButton = document.getElementById("signUp");
+if (signUpButton) {
+    signUpButton.addEventListener("click", function() {
+        window.location.href = "signup.html";
+    });
+}
+
 
 const signBtns = document.querySelectorAll(".sign__btn");
 signBtns.forEach((btn, index) => {
@@ -129,3 +137,11 @@ signBtns.forEach((btn, index) => {
         btn.classList.add("active");
     });
 });
+
+
+
+
+
+
+
+

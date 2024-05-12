@@ -138,6 +138,8 @@ nav .fa-solid {
 nav .fa-xmark {
     padding-left: 10px;
     color: #fff;
+    height: 20px;
+    margin-bottom: 10px;
 }
 nav .fa-bars {
     color: var(--secondary-color);
@@ -197,8 +199,32 @@ nav .fa-bars {
     .buttons {
         width: 100%;
         margin-left: 20px;
+        position: absolute;
+        bottom: 20px;
     }
 }
+
+nav .user {
+    display: flex;
+    align-items: center;
+}
+nav .user span {
+    color: #fff;
+    background-color: var(--secondary-color);
+    margin-right: 8px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+nav .user h2 {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
 /* Start Landing */
 .header {
     width: 100%;
@@ -752,7 +778,8 @@ input,
 select {
     width: 100%;
     background-color: transparent;
-    -appearence: none;
+    -webkit-appearance: none; 
+    appearance: none;
 }
 .sign__up .in__name,
 .sign__up .in__email {
@@ -769,7 +796,7 @@ select {
     position: absolute;
     width: 22px;
     top: 19%;
-    right: 16.5%;
+    right: 2%;
 }
 .sign__up .in__name .icon svg,
 .sign__up .in__email .icon svg{
@@ -789,11 +816,13 @@ select {
     -o-transition: all 0.5s ease-in-out;
     border-radius: 10px;
 }
-.sign__up .sign__btn:hover {
+.sign__up .sign__btn:hover,
+.sign__up .sign__btn.active {
     background-color: var(--secondary-color);
     color: #fff;
     border-color: var(--secondary-color);
 }
+
 @media(max-width:400px) {
     .sign__up .sign__btn {
         font-size: 14px;
@@ -1158,4 +1187,143 @@ textarea {
         width: 100%;
     }
 
+}
+
+
+
+
+
+
+.services__page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 50px;
+}
+  
+.sidebar {
+    width: 6%;
+    height: calc(100vh - 108.8px);
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 15px;
+    box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
+    border: 1px solid #e1e1e1;
+    
+}
+.sidebar .list {
+    height: 92%;
+    margin: 20px 15px;
+    text-align: center;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .list .icon {
+    font-size: 25px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.sidebar .list .icon.active,
+.sidebar .list .icon:hover {
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+  
+.services__content {
+    width: 100%;
+    text-align: center;
+}
+  
+.services__content .box {
+    width: 100%;
+    padding: 0; 
+    background: #fff;
+    border-radius: 10px;
+    border: 2.5px dashed #E1E1E1;
+    height: calc(100vh - 170px);
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+  
+.services__content .drag-area {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+  
+.services__content h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+}
+
+.drag-area .icon {
+    font-size: 100px;
+}
+  
+.drag-area .support {
+    font-size: 12px;
+    color: gray;
+    margin: 10px 0 15px 0;
+}
+.drag-area .button {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.drag-area img {
+    height: 100%;
+    object-fit: cover;
+}
+.services__content .upload__button {
+    width: 100%;
+    margin-top: 20px;
+}
+.services__content .btn {
+    width: 15%;
+    position: relative;
 }
