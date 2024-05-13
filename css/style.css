@@ -1561,6 +1561,9 @@ textarea {
         margin-left: 0;
         margin-bottom: 70px;
     } 
+    .enter__xray .upload__button {
+        margin-bottom: 70px;
+    }
 }
 
 @media(max-width: 767px) {
