@@ -23,10 +23,14 @@ button {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    transition: color 0.3s 0.1s ease-out;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    transition: color 0.3s 0.1s ease-out;
+    -webkit-transition: color 0.3s 0.1s ease-out;
+    -moz-transition: color 0.3s 0.1s ease-out;
+    -ms-transition: color 0.3s 0.1s ease-out;
+    -o-transition: color 0.3s 0.1s ease-out;
 }
 .btn::before {
     position: absolute;
@@ -188,12 +192,12 @@ nav .fa-bars {
     nav .nav-links ul a {
         color: #fff;
       }
-    .btn {
+    nav .btn {
         display: block;
         color: #fff;
         border: 1px solid #fff;
     }
-    .btn:nth-child(1) {
+    nav .btn:nth-child(1) {
         margin-bottom: 20px;
     }
     .buttons {
@@ -422,7 +426,6 @@ nav .user h2 {
 }
 .dentist__radiology .all {
     width: 100%;
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -594,12 +597,6 @@ footer .fa-square-x-twitter {
         gap: 15px;
     }    
 }
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 30px;
-} */
-
 /*----------------- Faq Page ------------------*/
 h1 {
     margin: 0;
@@ -712,8 +709,7 @@ h1 {
 .footer__faq .fa-brands {
     margin-left: 10px;
 }
-
-/*----------------------*/
+/*---------------------- Logins & Sign Up ----------------------*/
 .sign__in {
     width: 100%;
     height: calc(100vh - 80.8px);
@@ -918,7 +914,6 @@ textarea::placeholder {
 .dont__account a {
     margin-left: 5px;
 }
-/**/
 .sign__up .in__name,
 .sign__up .btns {
     width: 100%;
@@ -998,8 +993,7 @@ textarea::placeholder {
         color: var(--secondary-color);
     }
 }
-
-
+/* Contact Page*/
 .getTouch {
     width: 100%;
     display: flex;
@@ -1112,7 +1106,7 @@ textarea {
 
 
 
-
+/*  */
 
 .inputfile {
     width: 0.1px;
@@ -1146,6 +1140,7 @@ textarea {
     color: #B3B3B3;
 }
 
+/* Otp Page */
 .otp .right__side {
     width: 40%;
 }
@@ -1158,7 +1153,6 @@ textarea {
     justify-content: space-between;
 
 }
-
 .otp .input-field input {
     width: 10%;
 }
@@ -1168,7 +1162,6 @@ textarea {
 .otp .enterIt {
     margin-top: -20px;
 }
-
 .otp .forget {
     color: #B3B3B3;
     margin-bottom: 25px;
@@ -1186,14 +1179,8 @@ textarea {
     .otp .left__side {
         width: 100%;
     }
-
 }
-
-
-
-
-
-
+/*------------------------ Sidebar ---------------------------*/
 .services__page {
     width: 100%;
     display: flex;
@@ -1201,9 +1188,8 @@ textarea {
     align-items: flex-start;
     padding: 20px 50px;
 }
-  
 .sidebar {
-    width: 6%;
+    min-width: 7%;
     height: calc(100vh - 108.8px);
     object-fit: contain;
     background-color: #fff;
@@ -1211,20 +1197,19 @@ textarea {
     margin-right: 15px;
     box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
     border: 1px solid #e1e1e1;
-    
 }
 .sidebar .list {
     height: 92%;
-    margin: 20px 15px;
+    padding: 20px;
     text-align: center;
     color: var(--secondary-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;   
 }
 .sidebar .list .icon {
-    font-size: 25px;
-    padding: 13px 15px;
+    font-size: 22px;
+    padding: 12px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1242,13 +1227,48 @@ textarea {
     color: #fff;
     background-color: var(--secondary-color);
 }
-  
-.services__content {
+@media(max-width: 1199px) {
+    nav .user {
+        display: none;
+    }
+    .services__page {
+        padding: 20px 20px;
+    }
+    .page__content {
+        width: 100%;
+    }
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        height: 75px;
+        margin-right: 0;
+    }
+    .sidebar .list {
+        height: 100%;
+        flex-direction: row;
+        padding: 13px 10px;
+    }
+}
+
+/*------------------------ Sidebar list 1 ---------------------------*/
+
+.page__content {
+    width: 93%;
+}
+.page__content .content.active {
+    display: block;
+} 
+.page__content .content.inactive {
+    display: none;
+} 
+.enter__xray {
     width: 100%;
     text-align: center;
 }
-  
-.services__content .box {
+.enter__xray .box {
     width: 100%;
     padding: 0; 
     background: #fff;
@@ -1260,7 +1280,7 @@ textarea {
     overflow: hidden;
 }
   
-.services__content .drag-area {
+.enter__xray .drag-area {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -1276,7 +1296,7 @@ textarea {
     -o-transform: translate(-50%,-50%);
 }
   
-.services__content h3 {
+.enter__xray h3 {
     font-size: 30px;
     font-weight: 700;
     color: var(--secondary-color);
@@ -1291,16 +1311,16 @@ textarea {
     -o-transition: opacity 0.5s ease-in-out;
 }
 
-.drag-area .icon {
+.enter__xray .drag-area .icon {
     font-size: 100px;
 }
   
-.drag-area .support {
+.enter__xray .drag-area .support {
     font-size: 12px;
     color: gray;
     margin: 10px 0 15px 0;
 }
-.drag-area .button {
+.enter__xray .drag-area .button {
     font-size: 16px;
     font-weight: 500;
     color: #fff;
@@ -1315,15 +1335,245 @@ textarea {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.drag-area img {
+.enter__xray .drag-area img {
     height: 100%;
     object-fit: cover;
 }
-.services__content .upload__button {
+.enter__xray .upload__button {
     width: 100%;
     margin-top: 20px;
 }
-.services__content .btn {
+.enter__xray .btn {
     width: 15%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.enter__xray .btn svg {
+    width: 20px;
+    margin-left: 10px;
+}
+.enter__xray .btn svg g {
+    fill: var(--primary-color);
+}
+    
+.enter__xray .btn:hover svg g {
+    fill: #fff;
+}
+
+
+/*------------------------ Sidebar list 2 ---------------------------*/
+
+.message__reports,
+.radiology__center {
+    width: 100%;
+}
+.message__reports .row,
+.radiology__center .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.message__reports .reports,
+.message__reports .details,
+.radiology__center .reports,
+.radiology__center .details {
+    height: calc(100vh - 108.8px);
+    overflow-y: scroll;
+    box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.page__content .reports {
+    width: 40%;
+}
+
+.page__content .details {
+    width: 60%;
+    margin-left: 10px;
+}
+
+/* Message */
+.page__content h3 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.page__content .reports .search__container {
     position: relative;
+}
+.page__content .reports .search__container i {
+    position: absolute;
+    top: calc(50% - 17px);
+    right: 25px;
+    color: #B3B3B3;
+}
+.page__content div input {
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    margin-bottom: 20px;
+}
+.page__content .reports > div:not(:last-child) {
+    margin: 0 15px;
+}
+.message {
+    background-color: #fff;
+    padding: 15px;
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.message:hover {
+    background-color: #eee;
+    padding: 15px;
+}
+.message img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
+.message .img__name {
+    display: flex;
+    align-items: center;
+}
+.message .name__message  {
+    margin-left: 10px;
+}
+.message .name__message h6 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+.message .name__message p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+.message .date__unread {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.message .date__unread .date {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.message .date__unread .unread {
+    width: 7px;
+    height: 7px;
+    background-color: var(--secondary-color);
+    padding: 7px;
+    margin-top: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+/* Right Side */
+.details form input {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.details .logo {
+    text-align: center;
+}
+.details .logo img {
+    width: 50%;
+}
+.details form {
+    margin: 0 15px;
+}
+.details form .row {
+    gap: 10px;
+}
+.details .x_ray{
+    width: 100%;
+}
+.details .x_ray .box{
+    margin: 15px;
+    border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.details .x_ray img {
+    width: 100%;
+}
+.radiology__center .doctor img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+
+@media(max-width: 1199px) {
+    .page__content {
+        width: 100%;
+    }
+    .message__reports .row,
+    .radiology__center .row {
+        flex-direction: column;
+    }
+    .message__reports .reports,
+    .radiology__center .reports {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .message__reports .details,
+    .radiology__center .details {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 70px;
+    } 
+}
+
+@media(max-width: 767px) {
+    .enter__xray .btn {
+        width: 100%;
+    }
+    .enter__xray .btn::before {
+        width: 50em;
+    height: 19em;
+    }     
+}
+@media(max-width: 500px) {
+    .enter__xray .btn::before {
+        width: 31em;
+        height: 18em;
+    } 
 }
