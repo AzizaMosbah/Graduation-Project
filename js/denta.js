@@ -8,6 +8,7 @@ function showMenu() {
 function hideMenu() {
     navLinks.style.right = "-200px";
 }
+
 /*
   Login Page
 */
@@ -62,7 +63,7 @@ if (passwordInput && emailInput) {
 
   function validateEmailAndPassword() {
     if (validateEmail() && validatePassword()) {
-      window.location.href = "home.html";
+      window.location.href = "services.html";
       return false;
     }
     return false;
@@ -98,17 +99,6 @@ hidePasswordIcons.forEach(function(hideIcon, index) {
 });
 
 /*
-  Sign Up Page
-*/
-
-
-
-
-
-
-
-
-/*
   Go To Sign In Page
 */
 
@@ -129,7 +119,6 @@ if (signUpButton) {
     });
 }
 
-
 const signBtns = document.querySelectorAll(".sign__btn");
 signBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
@@ -138,13 +127,7 @@ signBtns.forEach((btn, index) => {
     });
 });
 
-
-
-
-
-
-
-
+// Drag & Drop Image
 const dropArea = document.querySelector(".drag-area");
     const dragText = document.getElementById("header");
 
@@ -202,12 +185,9 @@ const dropArea = document.querySelector(".drag-area");
     }
 }
 
-
-
-
-
-
-
+/* 
+  Sidebar
+*/
 document.addEventListener('DOMContentLoaded', function() {
   var icons = document.querySelectorAll('.icon');
   icons.forEach(function(icon) {
@@ -227,6 +207,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
       icons.forEach(function(icon) {
         icon.classList.remove('active');
+      });
+
+      this.classList.add('active');
+    });
+  });
+});
+
+/* 
+  Calender
+*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  var patientHeaders = document.querySelectorAll('.item');
+  var checkboxes = document.querySelectorAll('.checkbox');
+
+  patientHeaders.forEach(function(item) {
+    item.addEventListener('click', function() {
+      item.classList.add('active');
+
+      if (item.classList.contains('finish')) {
+        checkboxes.forEach(function(checkbox) {
+          checkbox.style.display = 'none';
+        });
+      } else {
+        checkboxes.forEach(function(checkbox) {
+          checkbox.style.display = 'block';
+        });
+      }
+
+      patientHeaders.forEach(function(e) {
+        if (e !== item) {
+          e.classList.remove('active');
+        }
+      });
+    });
+  });
+});
+
+/*
+  Settings
+*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  const list = document.querySelectorAll('.list__items');
+
+  list.forEach(function(item) {
+    item.addEventListener('click', function() {
+      let target = this.getAttribute('data-target');
+      let contents = document.querySelectorAll('.cont');
+      
+      contents.forEach(function(content) {
+        if (content.classList.contains(target)) {
+          content.classList.add('active');
+          content.classList.remove('inactive');
+        } else {
+          content.classList.remove('active');
+          content.classList.add('inactive');
+        }
+      });
+
+      list.forEach(function(item) {
+        item.classList.remove('active');
       });
 
       this.classList.add('active');

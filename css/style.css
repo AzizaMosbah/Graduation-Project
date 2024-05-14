@@ -13,9 +13,9 @@ button {
     border: none;
     outline: none;
     background-color: transparent;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     padding: 10px 30px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     font-size: 16px;
     font-weight: 700;
     border-radius: 10px;
@@ -26,13 +26,13 @@ button {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: color 0.3s 0.1s ease-out;
-    -webkit-transition: color 0.3s 0.1s ease-out;
-    -moz-transition: color 0.3s 0.1s ease-out;
-    -ms-transition: color 0.3s 0.1s ease-out;
-    -o-transition: color 0.3s 0.1s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
 }
-.btn::before {
+/* .btn::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,14 +48,16 @@ button {
     text-align: center;
     transition: box-shadow 0.5s ease-out;
     z-index: -1;
-}
+} */
 .btn:hover {
     color: #fff;
-    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
 }
-.btn:hover::before {
-    box-shadow: inset 0 0 0 10em var(--primary-color);
-}
+/* .btn:hover::before {
+    box-shadow: inset 0 0 0 10em var(--secondary-color);
+} */
+
 ul {
     margin-bottom: 0;
 }
@@ -929,9 +931,6 @@ textarea::placeholder {
     width: 50%;
     text-align: center;
 }
-.sign__up .btn::before {
-    width: 21.5em;
-}
 .sign__up .btn {
     color: var(--secondary-color);
 }
@@ -1258,10 +1257,12 @@ textarea {
 .page__content {
     width: 93%;
 }
-.page__content .content.active {
+.page__content .content.active,
+.page__content .cont.active {
     display: block;
 } 
-.page__content .content.inactive {
+.page__content .content.inactive,
+.page__content .cont.inactive {
     display: none;
 } 
 .enter__xray {
@@ -1281,6 +1282,7 @@ textarea {
 }
   
 .enter__xray .drag-area {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -1336,6 +1338,7 @@ textarea {
     -o-border-radius: 5px;
 }
 .enter__xray .drag-area img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -1344,7 +1347,7 @@ textarea {
     margin-top: 20px;
 }
 .enter__xray .btn {
-    width: 15%;
+    width: 25%;
     display: inline-flex;
     justify-content: center;
 }
@@ -1354,7 +1357,7 @@ textarea {
     margin-left: 10px;
 }
 .enter__xray .btn svg g {
-    fill: var(--primary-color);
+    fill: var(--secondary-color);
 }
     
 .enter__xray .btn:hover svg g {
@@ -1365,11 +1368,15 @@ textarea {
 /*------------------------ Sidebar list 2 ---------------------------*/
 
 .message__reports,
-.radiology__center {
+.radiology__center,
+.calender,
+.settings {
     width: 100%;
 }
 .message__reports .row,
-.radiology__center .row {
+.radiology__center .row,
+.calender .row,
+.settings .row {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1377,7 +1384,11 @@ textarea {
 .message__reports .reports,
 .message__reports .details,
 .radiology__center .reports,
-.radiology__center .details {
+.radiology__center .details,
+.calender .reports,
+.calender .details,
+.settings .reports,
+.settings .details {
     height: calc(100vh - 108.8px);
     overflow-y: scroll;
     box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
@@ -1399,11 +1410,20 @@ textarea {
 
 /* Message */
 .page__content h3 {
+    width: 100%;
+    color: #fff;
+    background-color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
     margin-bottom: 20px;
-    color: var(--secondary-color);
-    margin-top: 10px;
-    font-size: 24px;
-    font-weight: 600;
+    padding: 10px 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 .page__content .reports .search__container {
     position: relative;
@@ -1415,14 +1435,9 @@ textarea {
     color: #B3B3B3;
 }
 .page__content div input {
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
     margin-bottom: 20px;
 }
-.page__content .reports > div:not(:last-child) {
+.page__content .reports > div:not(:nth-child(odd)) {
     margin: 0 15px;
 }
 .message {
@@ -1461,7 +1476,7 @@ textarea {
 }
 .message .name__message h6 {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     color: #000;
     margin-bottom: 10px;
 }
@@ -1481,10 +1496,10 @@ textarea {
     margin-bottom: 8px;
 }
 .message .date__unread .unread {
-    width: 7px;
-    height: 7px;
+    width: 5px;
+    height: 5px;
     background-color: var(--secondary-color);
-    padding: 7px;
+    padding: 5px;
     margin-top: 5px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -1513,6 +1528,9 @@ textarea {
 .details form .row {
     gap: 10px;
 }
+.details form .row:last-child {
+    margin-bottom: 30px;
+}
 .details .x_ray{
     width: 100%;
 }
@@ -1528,7 +1546,7 @@ textarea {
 .details .x_ray img {
     width: 100%;
 }
-.radiology__center .doctor img {
+.page__content .doctor img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -1540,22 +1558,280 @@ textarea {
     margin: 15px 0;
 }
 
+/* Calender */
+.calender .reports,
+.calender .details {
+    height: calc(100vh - 163.8px);
+}
+.calender .patients {
+    width: 40%;
+}
+.calender .information {
+    width: 60%;
+    overflow-y: visible;
+}
+.calender .btn {
+    width: 50%;
+}
+.calender .message .name__message {
+    margin-left: 0;
+}
+.calender .patients__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+.calender .patients__header div {
+    width: calc(100% / 3);
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+.calender .patients__header div.active {
+    border-bottom: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.calender .patients__header h4,
+.calender .patients__header p  {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.calender .patients__header p {
+    margin-bottom: 0;
+}
+.calender .reports > div:not(:nth-child(2n+1)) {
+    margin: 0 ;
+}
+.calender .date__patients {
+    display: flex;
+    flex-direction: row;
+}
+.calender .date__patients div:nth-child(1) {
+    margin-right: 20px;
+}
+.calender .search__container {
+    width: calc(60% - 7px);
+}
+.calender .search__container input {
+    margin-bottom: 10px;
+}
+.calender .new__send {
+    width: calc(40% - 4px);
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.calender textarea {
+    width: 100%;
+    min-height: 20px;
+    margin-bottom: 40px;
+}
+.calender .information {
+    height: fit-content;
+}
+.calender div div:nth-child(2).hidden {
+    display: none;
+}
+.calender i {
+    font-size: 16px;
+    margin-left: 10px;
+    text-align: center;
+}
+.calender .btn:hover i {
+    color: #fff;
+}
+
+/*
+    Settings
+*/
+.settings .reports {
+    width: 25%;
+}
+.settings .reports {
+    width: 25%;
+    overflow-y: visible;
+}
+.settings .details {
+    width: 75%;
+    overflow-y: scroll;
+}
+.settings .details h3 {
+    position: sticky;
+    top: 0;
+}
+.settings .list {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color);
+}
+.settings .list div {
+    padding: 25px;
+    background-color: #fff;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.settings .list div:hover {
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+.settings .list i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.settings h4 {
+    margin: 15px;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+.settings label {
+    display: inline-block;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+.settings .details form {
+    margin: 0;
+}
+.settings .details form div {
+    margin: 0 15px;
+}
+.settings .details form p {
+    position: relative;
+}
+.settings .details form i {
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.settings .doctor div {
+    position: relative;
+}
+.settings .doctor i {
+    position: absolute;
+    top: 70%;
+    left: 56%;
+    color: #fff;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.settings .rating {
+    display: inline-block;
+    margin-top: -10px;
+}
+.settings .rating input {
+    display: none;
+}
+.settings .rating label {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+}
+.settings .rating label:before {
+    content: '\2605';
+    font-size: 35px;
+}
+.settings .rating input:checked ~ label,
+.settings .rating label:hover,
+.settings .rating label:hover ~ label {
+    color: #e58e09;
+    transition: color 0.3s;
+}
+.security .list__items {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+
+
+.subscription {
+    width: 100%;
+}
+.subscription .row {
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    gap: 10px;
+    color: var(--secondary-color);
+}
+.premium,
+.basic,
+.enterprise {
+    width: 33%;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.subscription h6 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.subscription p {
+    margin-bottom: 30px;
+}
+.premium div,
+.basic div,
+.enterprise div {
+    font-size: 70px;
+    font-weight: 700;
+}
+.premium div span,
+.basic div span,
+.enterprise div span {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.subscription .btn {
+    width: 100%;
+}
+
+
+
+
+
+
 
 @media(max-width: 1199px) {
     .page__content {
         width: 100%;
     }
     .message__reports .row,
-    .radiology__center .row {
+    .radiology__center .row,
+    .calender .row {
         flex-direction: column;
     }
     .message__reports .reports,
-    .radiology__center .reports {
+    .radiology__center .reports,
+    .calender .reports {
         width: 100%;
         margin-bottom: 20px;
     }
     .message__reports .details,
-    .radiology__center .details {
+    .radiology__center .details,
+    .calender .details {
         width: 100%;
         margin-left: 0;
         margin-bottom: 70px;
@@ -1563,20 +1839,32 @@ textarea {
     .enter__xray .upload__button {
         margin-bottom: 70px;
     }
+    .calender .search__container {
+        width: 100%;
+    }
+    .calender .btn,
+    .calender .new__send {
+        width: 100%;
+    }
+    .calender .row:nth-child(1) {
+        margin-bottom: 10px;
+    }
+    .calender .information {
+        height: calc(100vh - 270px);
+    }
+    .calender .information .row  {
+        gap: 0;
+    }
+    .calender .information textarea  {
+        margin-bottom: 20px;
+    }
+    .calender .information .row .btn  {
+        margin-bottom: 10px;
+    }     
 }
 
 @media(max-width: 767px) {
     .enter__xray .btn {
         width: 100%;
-    }
-    .enter__xray .btn::before {
-        width: 50em;
-    height: 19em;
-    }     
-}
-@media(max-width: 500px) {
-    .enter__xray .btn::before {
-        width: 31em;
-        height: 18em;
-    } 
+    }    
 }
