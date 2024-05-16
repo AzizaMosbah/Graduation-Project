@@ -42,7 +42,7 @@
         <div class="icon" data-target="radiology__center"><i class="fa-solid fa-file-invoice-dollar"></i></div>
         <div class="icon" data-target="calender"><i class="fa-solid fa-calendar-days"></i></div>
         <div class="icon" data-target="settings"><i class="fa-solid fa-gear"></i></div>
-        <div class="icon" data-target="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+        <div class="icon" ><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
       </div>
     </div>
     <div class="page__content">
@@ -602,11 +602,11 @@
               <input type="text" name="search" placeholder="Search"/>
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div class="list">
-              <div class="profile list__items" data-target="profile"><i class="fa-solid fa-user"></i>Profile</div>
-              <div class="security list__items" data-target="security"><i class="fa-solid fa-shield-halved"></i>Security</div>
-              <div class="subscription list__items" data-target="subscription"><i class="fa-solid fa-money-check-dollar"></i>Subscription</div>
-              <div class="delete__account list__items" data-target="delete__account"><i class="fa-solid fa-user-xmark"></i>Delete Account</div>
+            <div class="list menu">
+              <div class="profile list__items" data-target="profile"><i class="fa-solid fa-user"></i><span>Profile</span></div>
+              <div class="security list__items" data-target="security"><i class="fa-solid fa-shield-halved"></i><span>Security</span></div>
+              <div class="subscription list__items" data-target="subscription"><i class="fa-solid fa-money-check-dollar"></i><span>Subscription</span></div>
+              <div class="delete__account list__items" data-target="delete__account"><i class="fa-solid fa-user-xmark"></i><span>Delete Account</span></div>
             </div>
           </div>
           <div class="details information">
@@ -722,7 +722,7 @@
                 <div class="row">
                   <div class="premium">
                     <h6>Premium</h6>
-                    <p>20% save</p>
+                    <p class="dis">20% save</p>
                     <div>
                       50$
                       <span>Per 3 Months</span>
@@ -731,7 +731,7 @@
                   </div>
                   <div class="basic">
                     <h6>Basic</h6>
-                    <p>0% save</p>
+                    <p class="dis">0% save</p>
                     <div>
                       10$
                       <span>Per Month</span>
@@ -740,12 +740,68 @@
                   </div>
                   <div class="enterprise">
                     <h6>Enterprise</h6>
-                    <p>50% save</p>
+                    <p class="dis">50% save</p>
                     <div>
                       100$
                       <span>Per Year</span>
                     </div>
                     <button class="btn">Renew</button>
+                  </div>
+                </div>
+                <div class="saved__payment">
+                  <div class="row">
+                    <div class="payment">
+                      <h4 class="text-center">Saved Payment Methods</h4>
+                      <div class="col">
+                        <div class="radio form-group">
+                          <div class="check">
+                            <input id="CC-0" type="radio" name="availPayment" value="4582" checked>
+                            <img src="images/visa.svg" alt="">
+                          </div>
+                          <label for="CC-0">
+                            <p>**** **** **** 4582</p>
+                            <p>Visa</p>
+                          </label>
+                        </div>
+                        <div class="radio form-group">
+                          <div class="check">
+                            <input id="CC-0" type="radio" name="availPayment" value="4582" checked>
+                            <img src="images/paypal.svg" alt="">
+                          </div> 
+                          <label for="CC-0">
+                            <p>**** **** **** 4582</p>
+                            <p>Visa</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="radio form-group">
+                          <div class="check">
+                            <input id="CC-0" type="radio" name="availPayment" value="4582" checked>
+                            <img src="images/mastercard.svg" alt="">
+                          </div>
+                          <label for="CC-0">
+                            <p>**** **** **** 4582</p>
+                            <p>Visa</p>
+                          </label>
+                        </div>
+                        <div class="radio form-group">
+                          <div class="check">
+                            <input id="CC-0" type="radio" name="availPayment" value="4582" checked>
+                            <img src="images/google-pay.svg" alt="">
+                          </div>
+                          <label for="CC-0">
+                            <p>**** **** **** 4582</p>
+                            <p>Visa</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <div class="col-sm-12 field" id="update-pledge-validate">
+                          <input type="button" class="btn btn-block btn-primary" id="submitUpdatePledge" value="New Payment Method">
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -758,9 +814,9 @@
           </div>
         </div>
       </div>
-      <div class="content logout inactive">
+      <!-- <div class="content logout inactive">
         <p>logout</p>
-      </div>
+      </div> -->
     </div>  
   </div>
   <script defer src="js/googleapis.js"></script> 

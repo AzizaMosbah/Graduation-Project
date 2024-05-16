@@ -290,7 +290,7 @@ nav .user h2 {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.6;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 .services .row {
     width: 100%;
@@ -712,52 +712,45 @@ h1 {
     margin-left: 10px;
 }
 /*---------------------- Logins & Sign Up ----------------------*/
-.sign__in {
+.signIn {
     width: 100%;
-    height: calc(100vh - 80.8px);
+    height: calc(100vh - 68.8px);
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     padding: 15px 50px;
-    position: relative;
     overflow: hidden;
 }
-.sign__in .left__side {
+.signIn .leftSide {
     width: 60%;
-    height: 100%;
+    height: calc(100vh - 80.8px);
+    overflow: hidden;
 }
-.sign__in .left__side img {
-    height: 95%;
-    margin: auto;
+.signIn .leftSide img {
+    width: 100%;
+    margin: auto 0;
 }
-.sign__in .right__side {
+.signIn .rightSide {
     width: 40%;
-    margin: auto;
+    margin: auto 0;
     text-align: center;
 }
-.sign__in .right__side h2 {
+.signIn .heading {
+    margin-bottom: 30px;
+}
+.signIn .rightSide h2 {
     font-size: 35px;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 10px;
-    margin-top: 10px;
 }
-.sign__in .right__side p {
+.signIn .rightSide p {
     font-size: 16px;
     font-weight: 400;
     color: #B3B3B3;
 }
-.sign__in .right__side p,
-.sign__in .right__side input,
-.sign__in .right__side .forget__password,
-select {
-    margin-bottom: 25px;
-}
-
-.sign__in .right__side form {
+.signIn .rightSide form {
     width: 100%;
 }
-.sign__in .right__side input,
+.signIn .rightSide input,
 select,
 input,
 .inputfile + label {
@@ -779,28 +772,38 @@ select {
     -webkit-appearance: none; 
     appearance: none;
 }
-.sign__up .in__name,
-.sign__up .in__email {
+.signUp {
+    height: 100%;
+}
+.signUp .signInEmail {
     position: relative;
 }
-.sign__up .in__name .icon {
+.error-message,
+.error-message {
+    color: #ff0000;
+    display: none;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px 0 0 5px;
+}
+.signUp .signInName .icon {
     position: absolute;
     width: 30px;
     top: 13%;
     right: 9px;
     z-index: -1;
 }
-.sign__up .in__email .icon {
+.signUp .signInEmail .icon {
     position: absolute;
     width: 22px;
     top: 19%;
     right: 2%;
 }
-.sign__up .in__name .icon svg,
-.sign__up .in__email .icon svg{
+.signUp .signInName .icon svg,
+.signUp .signInEmail .icon svg{
     fill: #5f5f5f; 
 }
-.sign__up .sign__btn {
+.signUp .sign__btn {
     width: 50%;
     margin-bottom: 20px;
     padding: 13px 20px 13px 15px;
@@ -814,15 +817,15 @@ select {
     -o-transition: all 0.5s ease-in-out;
     border-radius: 10px;
 }
-.sign__up .sign__btn:hover,
-.sign__up .sign__btn.active {
+.signUp .sign__btn:hover,
+.signUp .sign__btn.active {
     background-color: var(--secondary-color);
     color: #fff;
     border-color: var(--secondary-color);
 }
 
 @media(max-width:400px) {
-    .sign__up .sign__btn {
+    .signUp .sign__btn {
         font-size: 14px;
     }
 }
@@ -834,72 +837,46 @@ textarea::placeholder {
     font-size: 14px;
 }
 /* Show & Hide Password */
-.in__password .password__icon {
-    position: relative;
 
-}
-.in__password .password__icon div {
-    position: absolute;
-    top: 35%;
-    left: 95%;
-    transform: translate(-50%, -50%);
-}
-.show__hide {
-    --size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.SignInPassword .inputBox .icon{
     position: relative;
-    cursor: pointer;
-    font-size: var(--size);
-    user-select: none;
-    fill: #B3B3B3;
-}
-.show__hide .eye {
-    position: absolute;
-    animation: keyframes-fill .5s;
-    display: none;
-}
-.show__hide .eye-slash {
-    position: absolute;
-    animation: keyframes-fill .5s;
-}
-.show__hide input:checked ~ .eye {
-    display: block;
 }
 
-.show__hide input:checked ~ .eye-slash {
-    display: none;
+.SignInPassword .inputBox input:is(:focus, :valid){
+    border-color: var(--secondary-color);
 }
-.show__hide input {
+.SignInPassword .inputBox :is(label, i){
     position: absolute;
-    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    transition: all 0.2s linear;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.SignInPassword .inputBox i{
+    right: 15px;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    font-size: 20px;
 }
-@keyframes keyframes-fill {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-    }
+.SignInPassword .inputBox input:is(:focus, :valid) ~ i{
+    color: var(--secondary-color);
 }
+
 /* End Show & Hide Password */
-.right__side .forget__password {
-    margin-top: -10px;
+.rightSide .forget__password {
     font-size: 16px;
     font-weight: 400;
     text-align: left;
     padding-left: 10px;
 }
-.right__side a {
+.rightSide a {
     text-decoration: none;
     color: var(--secondary-color);
 }
-.in__submit input[type="submit"] {
+.signInSubmit input[type="submit"] {
     background-color: var(--secondary-color);
     color: #fff;
     font-size: 20px;
@@ -916,81 +893,86 @@ textarea::placeholder {
 .dont__account a {
     margin-left: 5px;
 }
-.sign__up .in__name,
-.sign__up .btns {
+.signUp .signInName,
+.signUp .btns {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 10px;
     margin: auto;
 }
-.sign__up .btns {
-    margin-bottom: 25px;
+.signInEmail,
+.signInPassword,
+.signInSubmit,
+.forget__password,
+.signInPhone,
+.signInName div,
+.inputBox {
+    margin-bottom: 15px;
+    text-align: left;
 }
-.sign__up .btn {
+
+.signUp .signInSubmit {
+    margin-bottom: 0;
+}
+.signUp .signInName div {
+    width: 50%;
+}
+.signUp .btn {
     width: 50%;
     text-align: center;
 }
-.sign__up .btn {
+.signUp .btn {
     color: var(--secondary-color);
 }
-.sign__up .btn:hover {
+.signUp .btn:hover {
     border: 1px solid var(--secondary-color);
     color: #fff;
 }
-.sign__up .btn:hover::before {
+.signUp .btn:hover::before {
     box-shadow: inset 0 0 0 10em var(--secondary-color);
 }
-.sign__up .btn.active {
+.signUp .btn.active {
     background-color: var(--secondary-color);
     color: #fff;
     z-index: 2;
 }
-.sign__up .right__side p,
-.sign__up .right__side input,
-.sign__up .right__side .forget__password {
-    margin-bottom: 20px;
-}
-.password__error,
-.email__error {
-    color: #ff0000;
-    display: none;
-    font-size: 14px;
-}
-.email__error {
-    margin: -17px 0 20px -252px;
-}
-.password__error {
-    margin: -17px 0 20px -4px;
-}
 
 @media(max-width:1199px){
-    .sign__in {
+    .signIn {
+        width: 100%;
+        height: auto;
         padding: 15px 20px;
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .signIn .leftSide {
+        width: 100%;
         height: auto;
     }
-    .sign__in .left__side {
+    .signIn .leftSide img {
         width: 100%;
+        height: 100%;
     }
-    .sign__in .left__side img {
+    .signIn .rightSide {
         width: 100%;
+        margin: 0;
     }
-    .sign__in .right__side {
-        width: 100%;
-        margin-top: 20px;
+    .signIn .rightSide h2 {
+        font-size: 30px;
+        margin-top: 50px;
     }
-    .email__error,
-    .password__error {
-        margin: -17px 0 20px 10px;
-        text-align: left;
+    .signIn .rightSide p {
+        font-size: 14px;
     }
-    .sign__up .btn:hover::before {
+    .signUp .btn:hover::before {
         box-shadow: none;
     }
-    .sign__up .btn {
+    .signUp .btn {
         border: 1px solid var(--secondary-color);
         color: var(--secondary-color);
     }
+    
 }
 /* Contact Page*/
 .getTouch {
@@ -1121,7 +1103,6 @@ textarea {
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
-    margin-bottom: 18px;
     text-align: left;
     position: relative;
 }
@@ -1140,10 +1121,10 @@ textarea {
 }
 
 /* Otp Page */
-.otp .right__side {
+.otp .rightSide {
     width: 40%;
 }
-.otp .left__side {
+.otp .leftSide {
     width: 60%;
 }
 .otp .input-field {
@@ -1172,10 +1153,10 @@ textarea {
     .otp {
         flex-direction: column;
     }
-    .otp .right__side {
+    .otp .rightSide {
         width: 100%;
     }
-    .otp .left__side {
+    .otp .leftSide {
         width: 100%;
     }
 }
@@ -1196,6 +1177,10 @@ textarea {
     margin-right: 15px;
     box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
     border: 1px solid #e1e1e1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 .sidebar .list {
     height: 92%;
@@ -1694,6 +1679,7 @@ textarea {
     margin: 15px;
     font-size: 20px;
     color: var(--secondary-color);
+    text-align: left;
 }
 .settings label {
     display: inline-block;
@@ -1787,7 +1773,7 @@ textarea {
     margin-bottom: 10px;
     font-weight: 500;
 }
-.subscription p {
+.subscription .dis {
     margin-bottom: 30px;
 }
 .premium div,
@@ -1809,6 +1795,84 @@ textarea {
 }
 
 
+.saved__payment .radio{
+	width: 50%;
+	display:flex;
+	justify-content: space-between;
+    align-items: center;
+	padding: 5px 15px 5px 10px;
+	margin: 20px auto;
+	border: 1px solid #e1e1e1;
+	background: linear-gradient(to bottom, white, #F4F4F4);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+
+.saved__payment .payment {
+    width: 100%;
+}
+.saved__payment .radio *{
+	align-self: center;
+}
+.saved__payment .check {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.radio input[type=radio]{
+    width: 30%;
+	margin: 0px;
+}
+.radio img{
+	width: 70%;
+	position: relative;
+	left: 25px;
+}
+.radio label {
+	text-align: right;
+    padding: 10px 0;
+}
+
+.saved__payment .col {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1820,18 +1884,41 @@ textarea {
     }
     .message__reports .row,
     .radiology__center .row,
-    .calender .row {
+    .calender .row,
+    .settings .row  {
         flex-direction: column;
     }
     .message__reports .reports,
     .radiology__center .reports,
-    .calender .reports {
+    .calender .reports,
+    .settings .reports  {
         width: 100%;
         margin-bottom: 20px;
     }
+    .settings .reports {
+        height: fit-content;
+        padding-bottom: 10px;
+    }
+    .settings .list__items span {
+        display: none;
+    }
+    .settings .menu {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .settings .menu div {
+        text-align: center;
+        padding: 15px;
+        width: 25%;
+    }
+    .settings .menu i {
+        margin-right: 0;
+    }
     .message__reports .details,
     .radiology__center .details,
-    .calender .details {
+    .calender .details,
+    .settings .details  {
         width: 100%;
         margin-left: 0;
         margin-bottom: 70px;
@@ -1860,7 +1947,7 @@ textarea {
     }
     .calender .information .row .btn  {
         margin-bottom: 10px;
-    }     
+    }    
 }
 
 @media(max-width: 767px) {

@@ -34,15 +34,17 @@
         </div>
         <i class="fa-solid fa-bars" onclick="showMenu()"></i>
     </nav>
-    <div class="sign__in sign__up">
-        <div class="left__side">
+    <div class="signIn signUp">
+        <div class="leftSide">
             <img src="images/login.svg" alt="SignIn">
         </div>
-        <div class="right__side">
-            <h2>Sign Up</h2>
-            <p>Create your new account</p>
+        <div class="rightSide">
+            <div class="heading">
+                <h2>Welcome</h2>
+                <p class="heading__p">Please enter your email and password</p>
+            </div>
             <form>
-                <div class="in__name">
+                <div class="signInEmail">
                     <select class="form-control" id="exampleSelectVendor" name="city">
                         <option selected="selected">Gharbia</option>
                         <option>Alexandria</option>
@@ -76,7 +78,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M72,46L51.4,66.6c-0.8,0.8-2,0.8-2.8,0L28,46c-1.1-1.1-1.1-2.9,0-4c1.1-1.1,2.9-1.1,4,0l18,18l18-18c1.1-1.1,2.9-1.1,4,0  C73.1,43.1,73.1,44.9,72,46z"/></svg>
                     </div>
                 </div>
-                <div class="in__name">
+                <div class="signInEmail">
                     <select class="form-control" id="exampleSelectVendor" name="city">
                         <option selected="selected">Gharbia</option>
                         <option>Alexandria</option>
@@ -110,7 +112,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><path d="M72,46L51.4,66.6c-0.8,0.8-2,0.8-2.8,0L28,46c-1.1-1.1-1.1-2.9,0-4c1.1-1.1,2.9-1.1,4,0l18,18l18-18c1.1-1.1,2.9-1.1,4,0  C73.1,43.1,73.1,44.9,72,46z"/></svg>
                     </div>
                 </div>
-                <div class="in__email">
+                <div class="signInEmail">
                     <input type="text" name="address" id="address" placeholder="Your Address" required>
                     <div class="icon">
                         <svg viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
@@ -121,14 +123,14 @@
                         </svg>
                     </div>
                 </div>
-                <div class="in__email">
+                <div class="signInEmail">
                     <input type="datetime-local"
                     id="meeting-time"
                     name="meeting-time"
                     value="2024-06-12T19:30"
                     placeholder="Avaliable Time (Days - Time)">
                 </div>
-                <div class="in__email box">
+                <div class="signInEmail box">
                     <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" multiple onchange="updateFileName(this, 'file-name-1')" />
                     <label for="file-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -137,7 +139,7 @@
                         <span id="file-name-1">Personal Photo</span>
                     </label>
                 </div>
-                <div class="in__email box">
+                <div class="signInEmail box">
                     <input type="file" name="file-3[]" id="file-3" class="inputfile inputfile-2" data-multiple-caption="{count} files selected" multiple onchange="updateFileName(this, 'file-name-2')" />
                     <label for="file-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -146,7 +148,7 @@
                         <span id="file-name-2">Syndicate card</span>
                     </label>
                 </div>
-                <div class="in__submit">
+                <div class="signInSubmit">
                     <input type="submit" value="Continue">
                 </div>
             </form>

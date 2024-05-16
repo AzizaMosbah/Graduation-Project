@@ -36,19 +36,21 @@
     </div>
     <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </nav>
-  <div class="sign__in">
-    <div class="left__side">
+  <div class="signIn">
+    <div class="leftSide">
         <img src="images/login.svg" alt="SignIn">
     </div>
-    <div class="right__side">
-        <h2>Forget your Password</h2>
-        <p>Please Enter Your E-mail or Phone Number</p>
+    <div class="rightSide">
+        <div class="heading">
+          <h2>Forget your Password</h2>
+          <p class="heading__p">Please Enter Your E-mail or Phone Number</p>
+        </div>
         <form id="forgetpass" method="post">
-            <div class="in__email">
+            <div class="signInEmail">
                 <input type="text" name="forgetpass" id="forget" placeholder="Enter E-mail or Phone Number">
                 <span id="forgetError" class="forget__error"></span>
             </div>
-            <div class="in__submit">
+            <div class="signInSubmit">
                 <input type="submit" value="Submit">
             </div>
         </form>
