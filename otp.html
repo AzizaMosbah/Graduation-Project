@@ -41,38 +41,30 @@
         <img src="images/login.svg" alt="SignIn">
     </div>
     <div class="rightSide">
-        <h2>Registration</h2>
-        <p>A 6-digit code was sent to ********661</p>
-        <p class="enterIt">Enter it within 2 minutes</p>
-        <form>
+        <div class="heading">
+          <h2>Welcome</h2>
+          <p>A 6-digit code was sent to ********661</p>
+          <p>Enter it within 2 minutes</p>
+        </div>
+        
+        <form id="otpForm">
           <div class="input-field" dir="ltr">
-            <input placeholder="-" class="input" required type="text" maxlength="1" autofocus>
-            <input placeholder="-" class="input" required type="text" maxlength="1" disabled>
-            <input placeholder="-" class="input" required type="text" maxlength="1" disabled>
-            <input placeholder="-" class="input" required type="text" maxlength="1" disabled>
-            <input placeholder="-" class="input" required type="text" maxlength="1" disabled>
-            <input placeholder="-" class="input" required type="text" maxlength="1" disabled>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" autofocus>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" disabled>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" disabled>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" disabled>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" disabled>
+            <input placeholder="-" class="otpInputs" type="text" maxlength="1" disabled>
           </div>
 
-          <div class="forget">Don't receive your code?<a href="#">Resend Code</a>
+          <div class="resendCode">Don't receive your code?<a href="#">Resend Code</a>
           </div>
-          <div class="in__submit">
-            <input type="submit" value="Verify" id="submitOtp" class="submit disabled">
+          <div class="signInSubmit">
+            <input type="submit" value="Verify" class="submit disabled">
           </div>
         </form>
     </div>
   </div>
-  <footer class="footer__faq">
-    <div class="logo__text"><span>DENTA</span>DIAGNOSE</div>
-    <div class="middle__text">Discover The Nearest Dentist & Radio Center</div>
-    <div class="follow__us">
-      <div class="social">
-        <i class="fa-brands fa-square-facebook fa-2x"></i>
-        <i class="fa-brands fa-linkedin fa-2x"></i>
-        <i class="fa-brands fa-square-x-twitter fa-2x"></i>
-      </div>
-    </div>
-  </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/denta.js"></script>
 </body>

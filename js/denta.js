@@ -1,6 +1,5 @@
-/*
-  Toggle
-*/
+/*---------------------------- Navbar Toggle ----------------------------*/
+
 var navLinks = document.getElementById("navLinks");
 function showMenu() {
   navLinks.style.right = "0";
@@ -9,9 +8,8 @@ function hideMenu() {
   navLinks.style.right = "-200px";
 }
 
-/*
-  Go To Sign In Page
-*/
+
+/*---------------------------- Go To Sign In Page ----------------------------*/
 
 var signInButton = document.getElementById("signIn");
 if (signInButton) {
@@ -19,9 +17,9 @@ if (signInButton) {
     window.location.href = "signin.html";
   });
 }
-/*
-  Go To Sign Up Page
-*/
+
+
+/*---------------------------- Go To Sign Up Page ----------------------------*/
 
 var signUpButton = document.getElementById("signUp");
 if (signUpButton) {
@@ -30,9 +28,8 @@ if (signUpButton) {
   });
 }
 
-/*
-  Show & Hide Password
-*/
+
+/*---------------------------- Show & Hide Password ----------------------------*/
 
 document.addEventListener('click', function(event) {
   if (event.target && event.target.classList.contains('toggle')) {
@@ -73,10 +70,8 @@ document.addEventListener('click', function(event) {
 });
 
 
+/*---------------------------- Login Page ----------------------------*/
 
-/*
-  Login Page
-*/
 var SignInForm = document.getElementById("SignInForm");
 var SignInEmail = document.getElementById("SignInEmail");
 var SignInEmailError = document.getElementById("SignInEmailError");
@@ -129,7 +124,7 @@ if (SignInPassword && SignInEmail) {
 
   function validateEmailAndPassword() {
     if (validateEmail() && validatePassword()) {
-      window.location.href = "services.html";
+      window.location.href = "index.html";
       return false;
     }
     return false;
@@ -142,11 +137,7 @@ if (SignInPassword && SignInEmail) {
 }
 
 
-
-/*
-  Sign Up Page
-*/
-
+/*---------------------------- Sign Up Page ----------------------------*/
 // buttons
 
 const signBtns = document.querySelectorAll(".sign__btn");
@@ -309,9 +300,198 @@ if (signUpForm) {
     }
   })
 }
+/*---------------------------- Continue Sign Up Page ----------------------------*/
+
+function updateFileName(input, labelId) {
+  var label = document.getElementById(labelId);
+  var files = input.files;
+  if (files && files.length > 0) {
+      label.innerHTML = files[0].name;
+  } else {
+      label.innerHTML = 'Choose a file&hellip;';
+  }
+}
 
 
-// Drag & Drop Image
+var continueBtn = document.getElementById('continue');
+
+if (continueBtn) {
+  continueBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = "registrationSuccess.html";
+  });
+}
+
+
+/*---------------------------- Forget Password Page ----------------------------*/
+
+var forgetpasswordForm = document.getElementById('forgetpasswordForm');
+var emailPhoneInput = document.getElementById('forgetPassword');
+
+if (forgetpasswordForm && emailPhoneInput) {
+  function validateForgetForm() {
+    const emailPhoneValue = emailPhoneInput.value;
+    const forgetError = document.getElementById('forgetEmailPhoneError');
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phonePattern = /^01[0-2,5]{1}[0-9]{8}$/;
+
+    forgetError.textContent = '';
+
+    if (emailPattern.test(emailPhoneValue)) {
+        return true;
+    } else if (phonePattern.test(emailPhoneValue)) {
+        return true;
+    } else if (isNaN(emailPhoneValue)) {
+        forgetError.textContent = 'Please enter a valid email';
+        forgetError.style.display = "block";
+        return false;
+    } else {
+        forgetError.textContent = 'Please enter a valid phone number';
+        forgetError.style.display = "block";
+        return false;
+    }
+  }
+
+  emailPhoneInput.addEventListener("blur", validateForgetForm);
+
+  forgetpasswordForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (validateForgetForm()) {
+      window.location.href = "otp.html";
+    }
+  });
+}
+
+
+/*---------------------------- Otp Page ----------------------------*/
+
+var otpForm = document.getElementById('otpForm');
+
+if (otpForm) {
+  const otpInputs = document.querySelectorAll('.otpInputs');
+  const submitButton = document.querySelector('.signInSubmit input[type="submit"]');
+
+  window.addEventListener('load', () => {
+    otpInputs.forEach(input => {
+      input.value = '';
+      input.disabled = true;
+    });
+    otpInputs[0].disabled = false;
+    submitButton.classList.add('disabled');
+  });
+
+  otpInputs.forEach((input, index) => {
+    input.addEventListener('input', () => {
+      if (input.value.length === 1 && index < otpInputs.length - 1) {
+        otpInputs[index + 1].disabled = false;
+        otpInputs[index + 1].focus();
+      }
+      checkAllInputs();
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace') {
+        if (input.value.length === 0 && index > 0) {
+          otpInputs[index - 1].value = '';
+          otpInputs[index - 1].focus();
+          otpInputs[index].disabled = true;
+        } else {
+          input.value = '';
+        }
+      }
+    });
+
+    input.addEventListener('focus', () => {
+      if (index > 0 && otpInputs[index - 1].value.length === 0) {
+        otpInputs[index - 1].focus();
+      }
+    });
+  });
+
+  function checkAllInputs() {
+    const allFilled = [...otpInputs].every(input => input.value.length === 1);
+    if (allFilled) {
+      submitButton.classList.remove('disabled');
+    } else {
+      submitButton.classList.add('disabled');
+    }
+    return allFilled;
+  }
+
+  otpForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!submitButton.classList.contains('disabled') && checkAllInputs()) {
+      window.location.href = "changePass.html";
+    }
+  });
+}
+
+
+/*---------------------------- Change Password Page ----------------------------*/
+
+var changePasswordForm = document.getElementById('changePasswordForm');
+var changePasswordInput = document.getElementById('changePassword');
+var changePasswordError = document.getElementById('changePasswordError');
+var changePasswordConfirmInput = document.getElementById('changePasswordConfirm');
+var changePasswordConfirmError = document.getElementById('changePasswordConfirmError');
+
+if(changePasswordInput) {
+  function validatePassword() {
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
+    if (!passwordRegex.test(changePasswordInput.value)) {
+      changePasswordError.textContent = "Password must be at least 5 characters long and contain a number";
+      changePasswordError.style.display = "block";
+      return false;
+    } else {
+      changePasswordError.textContent = "";
+      changePasswordError.style.display = "none";
+      return true;
+    }
+  }
+  changePasswordInput.addEventListener('blur', validatePassword);
+}
+
+if(changePasswordConfirmInput) {
+  function validateConfirmPassword() {
+    if (changePasswordConfirmInput.value !== changePasswordInput.value) {
+      changePasswordConfirmError.textContent = "Passwords do not match";
+      changePasswordConfirmError.style.display = "block";
+      return false;
+    } else {
+      changePasswordConfirmError.textContent = "";
+      changePasswordConfirmError.style.display = "none";
+      return true;
+    }
+  }
+  changePasswordConfirmInput.addEventListener('blur', validateConfirmPassword);
+}
+
+if(changePasswordForm) {
+  changePasswordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var validChangePassword = validatePassword();
+    var validChangeConfirmPassword = validateConfirmPassword();
+  
+    if (validChangePassword && validChangeConfirmPassword) {
+      window.location.href = "changeSuccess.html"; 
+    }
+  });
+}
+
+
+/*---------------------------- Success Page ----------------------------*/
+var loginButton = document.getElementById('loginButton');
+
+if (loginButton) {
+  loginButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = "index.html";
+  });
+}
+
+
+/*---------------------------- Drag & Drop Image ----------------------------*/
+
 const dropArea = document.querySelector(".drag-area");
 
 if (dropArea) {
@@ -372,9 +552,9 @@ if (dropArea) {
   }
 }
 
-/* 
-  Sidebar
-*/
+
+/*---------------------------- Sidebar ----------------------------*/
+
 document.addEventListener("DOMContentLoaded", function () {
   var icons = document.querySelectorAll(".icon");
   icons.forEach(function (icon) {
@@ -401,9 +581,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/* 
-  Calender
-*/
+
+/*---------------------------- Calender ----------------------------*/
 
 document.addEventListener("DOMContentLoaded", function () {
   var patientHeaders = document.querySelectorAll(".item");
@@ -432,9 +611,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*
-  Settings
-*/
+
+/*---------------------------- Settings ----------------------------*/
 
 document.addEventListener("DOMContentLoaded", function () {
   const list = document.querySelectorAll(".list__items");

@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DentaDiagnose - Faq</title>
+  <title>DentaDiagnose - Home</title>
   <!-- Normalize Css -->
   <link rel="stylesheet" href="css/normalize.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Bootstrap Library -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- Font Awesome Library -->
   <link rel="stylesheet" href="css/all.min.css">
   <!-- Main css File -->
@@ -36,27 +34,22 @@
     </div>
     <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </nav>
-  <div class="signIn">
+  <div class="signIn signUp">
     <div class="leftSide">
         <img src="images/login.svg" alt="SignIn">
     </div>
-    <div class="rightSide">
+    <div class="rightSide success">
         <div class="heading">
-          <h2>Forget your Password</h2>
-          <p class="heading__p">Please Enter Your E-mail or Phone Number</p>
+          <h2>Congratulations</h2>
+          <p class="heading__p">Registration Success</p>
         </div>
-        <form id="forgetpasswordForm" method="post">
-            <div class="signInEmail">
-                <input type="text" name="forgetpass" id="forgetPassword" placeholder="Enter E-mail or Phone Number">
-                <span id="forgetEmailPhoneError" class="error-message"></span>
-            </div>
-            <div class="signInSubmit">
-                <input type="submit" value="Submit">
-            </div>
+        <form id="registrationSuccess">
+          <div class="signInSubmit">
+              <input type="submit" value="Login" id="loginButton">
+          </div>
         </form>
     </div>
   </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/denta.js"></script>
 </body>
 </html>
