@@ -31,41 +31,41 @@ if (signUpButton) {
 
 /*---------------------------- Show & Hide Password ----------------------------*/
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   if (event.target && event.target.classList.contains('toggle')) {
-      var passwordFields = document.querySelectorAll(".password");
-      var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
-      passwordFields.forEach(function(field) {
-          var state = field.getAttribute("type");
-          if (state === 'password') {
-              field.setAttribute("type", "text");
-              event.target.style.color = '#265073';
-          } else {
-              field.setAttribute("type", "password");
-              event.target.style.color = '#7a797e';
-          }
-      });
-      
+    var passwordFields = document.querySelectorAll(".password");
+    var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
+    passwordFields.forEach(function (field) {
+      var state = field.getAttribute("type");
+      if (state === 'password') {
+        field.setAttribute("type", "text");
+        event.target.style.color = '#265073';
+      } else {
+        field.setAttribute("type", "password");
+        event.target.style.color = '#7a797e';
+      }
+    });
+
   }
 });
 
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   if (event.target && event.target.classList.contains('confirmToggle')) {
 
-      var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
+    var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
 
-      confirmPasswordField.forEach(function(field) {
-          var state = field.getAttribute("type");
-          if (state === 'password') {
-              field.setAttribute("type", "text");
-              event.target.style.color = '#265073';
-          } else {
-              field.setAttribute("type", "password");
-              event.target.style.color = '#7a797e';
-          }
-      });
-      
+    confirmPasswordField.forEach(function (field) {
+      var state = field.getAttribute("type");
+      if (state === 'password') {
+        field.setAttribute("type", "text");
+        event.target.style.color = '#265073';
+      } else {
+        field.setAttribute("type", "password");
+        event.target.style.color = '#7a797e';
+      }
+    });
+
   }
 });
 
@@ -143,7 +143,7 @@ if (SignInPassword && SignInEmail) {
 const signBtns = document.querySelectorAll(".sign__btn");
 signBtns.forEach((btn, index) => {
   btn.addEventListener("click", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     signBtns.forEach((e) => e.classList.remove("active"));
     btn.classList.add("active");
   });
@@ -167,7 +167,7 @@ if (signUpFirst) {
   }
 }
 if (signUpFirst) {
-  signUpFirst.addEventListener("input", function() {
+  signUpFirst.addEventListener("input", function () {
     if (signUpFirstError.style.display === "block" && signUpFirst.value.trim() !== "") {
       signUpFirstError.textContent = "";
       signUpFirstError.style.display = "none";
@@ -286,7 +286,7 @@ if (confirmPassword) {
 }
 
 if (signUpForm) {
-  signUpForm.addEventListener("submit", function(e){
+  signUpForm.addEventListener("submit", function (e) {
     e.preventDefault();
     var validFirstName = validateFirstName();
     var validLastName = validateLastName();
@@ -294,9 +294,9 @@ if (signUpForm) {
     var validPhone = validateSignUpPhone();
     var validPassword = validatePassword();
     var validConfirmPassword = validateConfirmPassword();
-  
+
     if (validFirstName && validLastName && validEmail && validPhone && validPassword && validConfirmPassword) {
-      window.location.href = "continue.html"; 
+      window.location.href = "continue.html";
     }
   })
 }
@@ -306,9 +306,9 @@ function updateFileName(input, labelId) {
   var label = document.getElementById(labelId);
   var files = input.files;
   if (files && files.length > 0) {
-      label.innerHTML = files[0].name;
+    label.innerHTML = files[0].name;
   } else {
-      label.innerHTML = 'Choose a file&hellip;';
+    label.innerHTML = 'Choose a file&hellip;';
   }
 }
 
@@ -316,7 +316,7 @@ function updateFileName(input, labelId) {
 var continueBtn = document.getElementById('continue');
 
 if (continueBtn) {
-  continueBtn.addEventListener('click', function(e) {
+  continueBtn.addEventListener('click', function (e) {
     e.preventDefault();
     window.location.href = "registrationSuccess.html";
   });
@@ -338,17 +338,17 @@ if (forgetpasswordForm && emailPhoneInput) {
     forgetError.textContent = '';
 
     if (emailPattern.test(emailPhoneValue)) {
-        return true;
+      return true;
     } else if (phonePattern.test(emailPhoneValue)) {
-        return true;
+      return true;
     } else if (isNaN(emailPhoneValue)) {
-        forgetError.textContent = 'Please enter a valid email';
-        forgetError.style.display = "block";
-        return false;
+      forgetError.textContent = 'Please enter a valid email';
+      forgetError.style.display = "block";
+      return false;
     } else {
-        forgetError.textContent = 'Please enter a valid phone number';
-        forgetError.style.display = "block";
-        return false;
+      forgetError.textContent = 'Please enter a valid phone number';
+      forgetError.style.display = "block";
+      return false;
     }
   }
 
@@ -435,7 +435,7 @@ var changePasswordError = document.getElementById('changePasswordError');
 var changePasswordConfirmInput = document.getElementById('changePasswordConfirm');
 var changePasswordConfirmError = document.getElementById('changePasswordConfirmError');
 
-if(changePasswordInput) {
+if (changePasswordInput) {
   function validatePassword() {
     var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
     if (!passwordRegex.test(changePasswordInput.value)) {
@@ -451,7 +451,7 @@ if(changePasswordInput) {
   changePasswordInput.addEventListener('blur', validatePassword);
 }
 
-if(changePasswordConfirmInput) {
+if (changePasswordConfirmInput) {
   function validateConfirmPassword() {
     if (changePasswordConfirmInput.value !== changePasswordInput.value) {
       changePasswordConfirmError.textContent = "Passwords do not match";
@@ -466,14 +466,14 @@ if(changePasswordConfirmInput) {
   changePasswordConfirmInput.addEventListener('blur', validateConfirmPassword);
 }
 
-if(changePasswordForm) {
-  changePasswordForm.addEventListener('submit', function(e) {
+if (changePasswordForm) {
+  changePasswordForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var validChangePassword = validatePassword();
     var validChangeConfirmPassword = validateConfirmPassword();
-  
+
     if (validChangePassword && validChangeConfirmPassword) {
-      window.location.href = "changeSuccess.html"; 
+      window.location.href = "changeSuccess.html";
     }
   });
 }
@@ -483,7 +483,7 @@ if(changePasswordForm) {
 var loginButton = document.getElementById('loginButton');
 
 if (loginButton) {
-  loginButton.addEventListener('click', function(e) {
+  loginButton.addEventListener('click', function (e) {
     e.preventDefault();
     window.location.href = "index.html";
   });
@@ -640,3 +640,55 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+/*---------------------------- Sliders ----------------------------*/
+
+var wow = new WOW({
+  mobile: false // trigger animations on mobile devices (default is true)
+});
+wow.init();
+
+
+
+
+$(document).ready(function () {
+  // slick slider active 
+  $(".main_home_slider").slick({
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
+    nextArrow: "<i class='fa fa-angle-right nextprevright'></i>"
+  });
+
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    smartSpeed: 1000,
+    loop: true,
+    center: true,
+    dots: false,
+    nav: true,
+    navText: [
+      '<i class="fa-solid fa-chevron-left"></i>',
+      '<i class="fa-solid fa-chevron-right"></i>'
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        margin: 3 // Adjust margin for mobile view
+      },
+      768: {
+        items: 2,
+        margin: 3 // Adjust margin for tablet view
+      },
+      1200: {
+        items: 3,
+        margin: 3 // Adjust margin for desktop view
+      }
+    }
+  });
+});
+
+
+
