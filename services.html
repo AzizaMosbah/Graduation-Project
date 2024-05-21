@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,69 +15,140 @@
   <!-- Main css File -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <nav>
     <div class="logo">
-      <a href="index.html">DENTAS<span>DIAGNOSE</span></a>
+      <a href="index.html">DENTA<span>DIAGNOSE</span></a>
     </div>
     <div class="nav-links" id="navLinks">
-        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-        </ul>
-        <div class="user">
-          <span>O</span>
-          <h2>Osama Hegazy</h2>
-        </div>
+      <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+      <div class="user">
+        <span>O</span>
+        <h2>Osama Hegazy</h2>
+      </div>
     </div>
     <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </nav>
   <div class="services__page">
     <div class="sidebar">
       <div class="list">
-        <div class="icon active" data-target="enter__xray"><i class="fa-solid fa-x-ray"></i></div>
-        <div class="icon" data-target="message__reports"><i class="fa-regular fa-comment-dots"></i></div>
-        <div class="icon" data-target="radiology__center"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-        <div class="icon" data-target="calender"><i class="fa-solid fa-calendar-days"></i></div>
-        <div class="icon" data-target="settings"><i class="fa-solid fa-gear"></i></div>
-        <div class="icon" ><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+        <div class="icon active" data-target="enter__xray">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M0 64C0 46.3 14.3 32 32 32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32V416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32V96C14.3 96 0 81.7 0 64zM256 96c-8.8 0-16 7.2-16 16v32H160c-8.8 0-16 7.2-16 16s7.2 16 16 16h80v48H128c-8.8 0-16 7.2-16 16s7.2 16 16 16H240v70.6L189.1 307c-5.2-2-10.6-3-16.2-3h-2.1c-23.6 0-42.8 19.2-42.8 42.8c0 9.6 3.2 18.9 9.1 26.4l18.2 23.2c9.7 12.4 24.6 19.6 40.3 19.6H316.4c15.7 0 30.6-7.2 40.3-19.6l18.2-23.2c5.9-7.5 9.1-16.8 9.1-26.4c0-23.6-19.2-42.8-42.8-42.8H339c-5.5 0-11 1-16.2 3L272 326.6V256H384c8.8 0 16-7.2 16-16s-7.2-16-16-16H272V176h80c8.8 0 16-7.2 16-16s-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16zM208 352a16 16 0 1 1 0 32 16 16 0 1 1 0-32zm80 16a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z" />
+          </svg>
+        </div>
+        <div class="icon" data-target="message__reports">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+            <path d="M225,43.4c-124.6,0-223.5,87-223.5,193.8c0,63.3,35.6,122.6,94.9,158.2v61.3c0,5.9,3.9,9.9,7.9,11.8h3.9c3.9,0,5.9,0,7.9-2l27.7-17.8l2-2l31.7-19.8c15.8,2,31.7,3.9,47.5,3.9c122.6,0,221.6-87,221.6-193.8C446.5,130.4,347.6,43.4,225,43.4z M126.1,276.8c-14.2,0-25.7-11.5-25.7-25.7c0-14.2,11.5-25.7,25.7-25.7c14.2,0,25.7,11.5,25.7,25.7C151.8,265.3,140.3,276.8,126.1,276.8zM229,270.9c-14.2,0-25.7-11.5-25.7-25.7c0-14.2,11.5-25.7,25.7-25.7c14.2,0,25.7,11.5,25.7,25.7C254.7,259.3,243.2,270.9,229,270.9z M327.9,270.9c-14.2,0-25.7-11.5-25.7-25.7c0-14.2,11.5-25.7,25.7-25.7c14.2,0,25.7,11.5,25.7,25.7
+            C353.6,259.3,342.1,270.9,327.9,270.9z" />
+          </svg>
+
+        </div>
+        <div class="icon" data-target="radiology__center">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+            <path d="M66,0C30.7,0,2,28.7,2,64v384c0,35.3,28.7,64,64,64h286c35.3,0,94-28.7,94-64V160H318c-17.7,0-32-14.3-32-32V0H66z M318,0v128h128L318,0z M96,80c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16s-7.2,16-16,16h-64C103.2,96,96,88.8,96,80z M96,144
+            c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16s-7.2,16-16,16h-64C103.2,160,96,152.8,96,144z M224,216c8.8,0,16,7.2,16,16v17.3
+            c8.5,1.2,16.7,3.1,24.1,5.1c8.5,2.3,13.6,11,11.3,19.6c-2.3,8.6-11,13.6-19.6,11.3c-11.1-3-22-5.2-32.1-5.3
+            c-8.4-0.1-17.4,1.8-23.6,5.5c-5.7,3.4-8.1,7.3-8.1,12.8c0,3.7,1.3,6.5,7.3,10.1c6.9,4.1,16.6,7.1,29.2,10.9l0.5,0.1l0,0l0,0
+            c11.3,3.4,25.3,7.6,36.3,14.6c12.1,7.6,22.4,19.7,22.7,38.2c0.3,19.3-9.6,33.3-22.9,41.6c-7.7,4.8-16.4,7.6-25.1,9.1V440
+            c0,8.8-7.2,16-16,16s-16-7.2-16-16v-17.8c-11.2-2.1-21.7-5.7-30.9-8.9l0,0l0,0c-2.1-0.7-4.2-1.4-6.2-2.1
+            c-8.4-2.8-12.9-11.9-10.1-20.2s11.9-12.9,20.2-10.1c2.5,0.8,4.8,1.6,7.1,2.4l0,0l0,0l0,0c13.6,4.6,24.6,8.4,36.3,8.7
+            c9.1,0.3,17.9-1.7,23.7-5.3c5.1-3.2,7.9-7.3,7.8-14c-0.1-4.6-1.8-7.8-7.7-11.6c-6.8-4.3-16.5-7.4-29-11.2l-1.6-0.5l0,0
+            c-11-3.3-24.3-7.3-34.8-13.7c-12-7.2-22.6-18.9-22.7-37.3c-0.1-19.4,10.8-32.8,23.8-40.5c7.5-4.4,15.8-7.2,24.1-8.7V232
+            C208,223.2,215.2,216,224,216L224,216z" />
+          </svg>
+        </div>
+        <div class="icon" data-target="calender">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z" />
+          </svg>
+        </div>
+        <div class="icon" data-target="settings">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z" />
+          </svg>
+        </div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+          </svg>
+        </div>
       </div>
     </div>
     <div class="page__content">
       <div class="content enter__xray active">
-        <div class="box">
-          <div class="drag-area">
-            <div class="icon">
-              <i class="fas fa-images"></i>
-            </div>
-            <div>
-              <p class="drag__drop">Drag & Drop or </p>
-              <p class="button">Browse File</p>
-              <input type="file" hidden />
-              <span class="support">Supports: JPEG, JPG, PNG</span>
+        <div class="scan_xray">
+          <div class="box">
+            <div class="drag-area">
+              <div class="icon">
+                <i class="fas fa-images"></i>
+              </div>
+              <div>
+                <p class="drag__drop">Drag & Drop or </p>
+                <p class="button">Browse File</p>
+                <input type="file" hidden />
+                <span class="support">Supports: JPEG, JPG, PNG</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="upload__button">
-          <button class="btn">
-            <span>Scan</span> 
-            <span>
-              <svg viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <div class="upload__button">
+            <button class="btn" id="nextScan">
+              <span>
+                <svg viewBox="0 0 53 53" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="Scan" fill="red">
-                        <polygon id="Shape" points="4.4 14.2 1.4 14.2 1.4 0.6 15.8 0.6 15.8 3.6 4.4 3.6"></polygon>
-                        <polygon id="Shape" points="52.4 14.2 49.4 14.2 49.4 3.6 39.1 3.6 39.1 0.6 52.4 0.6"></polygon>
-                        <polygon id="Shape" points="15.8 52.2 1.4 52.2 1.4 38.6 4.4 38.6 4.4 49.2 15.8 49.2"></polygon>
-                        <polygon id="Shape" points="52.4 52.2 39.1 52.2 39.1 49.2 49.4 49.2 49.4 38.6 52.4 38.6"></polygon>
-                        <rect id="Rectangle-path" x="0.9" y="24.9" width="52" height="3"></rect>
+                      <polygon id="Shape" points="4.4 14.2 1.4 14.2 1.4 0.6 15.8 0.6 15.8 3.6 4.4 3.6"></polygon>
+                      <polygon id="Shape" points="52.4 14.2 49.4 14.2 49.4 3.6 39.1 3.6 39.1 0.6 52.4 0.6"></polygon>
+                      <polygon id="Shape" points="15.8 52.2 1.4 52.2 1.4 38.6 4.4 38.6 4.4 49.2 15.8 49.2"></polygon>
+                      <polygon id="Shape" points="52.4 52.2 39.1 52.2 39.1 49.2 49.4 49.2 49.4 38.6 52.4 38.6">
+                      </polygon>
+                      <rect id="Rectangle-path" x="0.9" y="24.9" width="52" height="3"></rect>
                     </g>
-                </g>
-              </svg>
-            </span>
-          </button>
+                  </g>
+                </svg>
+              </span>
+              <span>Scan</span>
+            </button>
+          </div>
+        </div>
+        <div class="next__xray hide">
+          <div class="box">
+            <img src="images/x-ray.png" alt="x-ray">
+            <div class="title">DIAGNOSE X-RAY</div>
+          </div>
+          <div class="upload__button">
+            <button class="btn" id="backBtn">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"/></svg>
+              </span>
+              <span>Back</span>
+            </button>
+            <button class="btn">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7V12.1893L14.4697 10.4697C14.7626 10.1768 15.2374 10.1768 15.5303 10.4697C15.8232 10.7626 15.8232 11.2374 15.5303 11.5303L12.5303 14.5303C12.3897 14.671 12.1989 14.75 12 14.75C11.8011 14.75 11.6103 14.671 11.4697 14.5303L8.46967 11.5303C8.17678 11.2374 8.17678 10.7626 8.46967 10.4697C8.76256 10.1768 9.23744 10.1768 9.53033 10.4697L11.25 12.1893V7C11.25 6.58579 11.5858 6.25 12 6.25ZM8 16.25C7.58579 16.25 7.25 16.5858 7.25 17C7.25 17.4142 7.58579 17.75 8 17.75H16C16.4142 17.75 16.75 17.4142 16.75 17C16.75 16.5858 16.4142 16.25 16 16.25H8Z"
+                    fill="#1C274C" />
+                </svg>
+              </span>
+              <span>Download</span>
+              
+            </button>
+          </div>
         </div>
       </div>
       <div class="content message__reports inactive">
@@ -86,7 +158,7 @@
               <h3>Reports</h3>
             </div>
             <div class="search__container">
-              <input type="text" name="search" placeholder="Search"/>
+              <input type="text" name="search" placeholder="Search" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
@@ -236,7 +308,7 @@
               <h3>Radiology Center</h3>
             </div>
             <div class="search__container">
-              <input type="text" name="search" placeholder="Search"/>
+              <input type="text" name="search" placeholder="Search" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div>
@@ -348,8 +420,15 @@
             </div>
           </div>
           <div class="details">
+            <div>
+              <h3>REQUEST</h3>
+            </div>
             <div class="logo doctor">
               <img src="images/ashkan.png" alt="logo" class="person">
+            </div>
+            <div>
+              <h4 class="custom__heading">Doctor Name</h4>
+              <p>Please Re-send The Patients X-ray</p>
             </div>
             <div>
               <form method="post">
@@ -364,17 +443,9 @@
                   <input type="date" name="date" id="date">
                 </div>
                 <div>
-                  <input type="text" name="dname" id="dname" placeholder="Doctor Name or Email">
+                  <input type="submit" value="Request" class="btn">
                 </div>
               </form>
-            </div>
-            <div class="x_ray">
-              <div class="box">
-                <img src="images/x-ray.png" alt="xray">
-              </div>
-              <div class="box">
-                <img src="images/x-ray.png" alt="xray">
-              </div>
             </div>
           </div>
         </div>
@@ -386,7 +457,7 @@
             <button class="btn">Send<i class="fa-solid fa-bell"></i></button>
           </div>
           <div class="search__container">
-            <input type="date" name="date"/>
+            <input type="date" name="date" />
           </div>
         </div>
         <div class="row">
@@ -599,14 +670,18 @@
               <h3>Settings</h3>
             </div>
             <div class="search__container">
-              <input type="text" name="search" placeholder="Search"/>
+              <input type="text" name="search" placeholder="Search" />
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div class="list menu">
-              <div class="profile list__items" data-target="profile"><i class="fa-solid fa-user"></i><span>Profile</span></div>
-              <div class="security list__items" data-target="security"><i class="fa-solid fa-shield-halved"></i><span>Security</span></div>
-              <div class="subscription list__items" data-target="subscription"><i class="fa-solid fa-money-check-dollar"></i><span>Subscription</span></div>
-              <div class="delete__account list__items" data-target="delete__account"><i class="fa-solid fa-user-xmark"></i><span>Delete Account</span></div>
+              <div class="profile list__items" data-target="profile"><i
+                  class="fa-solid fa-user"></i><span>Profile</span></div>
+              <div class="security list__items" data-target="security"><i
+                  class="fa-solid fa-shield-halved"></i><span>Security</span></div>
+              <div class="subscription list__items" data-target="subscription"><i
+                  class="fa-solid fa-money-check-dollar"></i><span>Subscription</span></div>
+              <div class="delete__account list__items" data-target="delete__account"><i
+                  class="fa-solid fa-user-xmark"></i><span>Delete Account</span></div>
             </div>
           </div>
           <div class="details information">
@@ -711,7 +786,7 @@
                 </div>
                 <div class="list">
                   <div class="profile list__items"><i class="fa-solid fa-unlock-keyhole"></i>Change Password</div>
-                  <div class="security list__items" ><i class="fa-solid fa-address-book"></i>Contact Information</div>
+                  <div class="security list__items"><i class="fa-solid fa-address-book"></i>Contact Information</div>
                 </div>
 
               </div>
@@ -767,7 +842,7 @@
                           <div class="check">
                             <input id="CC-0" type="radio" name="availPayment" value="4582" checked>
                             <img src="images/paypal.svg" alt="">
-                          </div> 
+                          </div>
                           <label for="CC-0">
                             <p>**** **** **** 4582</p>
                             <p>Visa</p>
@@ -798,7 +873,8 @@
                       </div>
                       <div class="form-group col-sm-12">
                         <div class="col-sm-12 field" id="update-pledge-validate">
-                          <input type="button" class="btn btn-block btn-primary" id="submitUpdatePledge" value="New Payment Method">
+                          <input type="button" class="btn btn-block btn-primary" id="submitUpdatePledge"
+                            value="New Payment Method">
                         </div>
                       </div>
                     </div>
@@ -809,6 +885,24 @@
                 <div>
                   <h3>Delete Account</h3>
                 </div>
+                <div>
+                  <p>Deleting your account will remove all of your information from our database. This cannot be undone.
+                  </p>
+                </div>
+                <div>
+                  <form>
+                    <div>
+                      <label for="password">To Confirm This Type " Password "</label>
+                    </div>
+                    <div>
+                      <input type="password" id="password">
+                    </div>
+                    <div class="signInSubmit">
+                      <input type="submit" value="Delete Account" id="signUpSubmit">
+                    </div>
+                  </form>
+                </div>
+
               </div>
             </div>
           </div>
@@ -817,9 +911,12 @@
       <!-- <div class="content logout inactive">
         <p>logout</p>
       </div> -->
-    </div>  
+    </div>
   </div>
-  <script defer src="js/googleapis.js"></script> 
+  <Script src="js/jquery.min.js"></Script>
+
+  <script defer src="js/googleapis.js"></script>
   <script src="js/denta.js"></script>
 </body>
+
 </html>

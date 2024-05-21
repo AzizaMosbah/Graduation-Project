@@ -8,7 +8,6 @@ function hideMenu() {
   navLinks.style.right = "-200px";
 }
 
-
 /*---------------------------- Go To Sign In Page ----------------------------*/
 
 var signInButton = document.getElementById("signIn");
@@ -17,7 +16,6 @@ if (signInButton) {
     window.location.href = "signin.html";
   });
 }
-
 
 /*---------------------------- Go To Sign Up Page ----------------------------*/
 
@@ -28,47 +26,41 @@ if (signUpButton) {
   });
 }
 
-
 /*---------------------------- Show & Hide Password ----------------------------*/
 
-document.addEventListener('click', function (event) {
-  if (event.target && event.target.classList.contains('toggle')) {
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.classList.contains("toggle")) {
     var passwordFields = document.querySelectorAll(".password");
     var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
     passwordFields.forEach(function (field) {
       var state = field.getAttribute("type");
-      if (state === 'password') {
+      if (state === "password") {
         field.setAttribute("type", "text");
-        event.target.style.color = '#265073';
+        event.target.style.color = "#265073";
       } else {
         field.setAttribute("type", "password");
-        event.target.style.color = '#7a797e';
+        event.target.style.color = "#7a797e";
       }
     });
-
   }
 });
 
-
-document.addEventListener('click', function (event) {
-  if (event.target && event.target.classList.contains('confirmToggle')) {
-
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.classList.contains("confirmToggle")) {
     var confirmPasswordField = document.querySelectorAll(".ConfirmPassword");
 
     confirmPasswordField.forEach(function (field) {
       var state = field.getAttribute("type");
-      if (state === 'password') {
+      if (state === "password") {
         field.setAttribute("type", "text");
-        event.target.style.color = '#265073';
+        event.target.style.color = "#265073";
       } else {
         field.setAttribute("type", "password");
-        event.target.style.color = '#7a797e';
+        event.target.style.color = "#7a797e";
       }
     });
-
   }
 });
-
 
 /*---------------------------- Login Page ----------------------------*/
 
@@ -136,7 +128,6 @@ if (SignInPassword && SignInEmail) {
   });
 }
 
-
 /*---------------------------- Sign Up Page ----------------------------*/
 // buttons
 
@@ -168,7 +159,10 @@ if (signUpFirst) {
 }
 if (signUpFirst) {
   signUpFirst.addEventListener("input", function () {
-    if (signUpFirstError.style.display === "block" && signUpFirst.value.trim() !== "") {
+    if (
+      signUpFirstError.style.display === "block" &&
+      signUpFirst.value.trim() !== ""
+    ) {
       signUpFirstError.textContent = "";
       signUpFirstError.style.display = "none";
     }
@@ -230,9 +224,11 @@ var signUpPasswordError = document.getElementById("signUpPasswordError");
 
 if (signUpPassword) {
   function validatePassword() {
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
+    var passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
     if (!passwordRegex.test(signUpPassword.value)) {
-      signUpPasswordError.textContent = "Password must be at least 5 characters long and contain a number";
+      signUpPasswordError.textContent =
+        "Password must be at least 5 characters long and contain a number";
       signUpPasswordError.style.display = "block";
       return false;
     } else {
@@ -259,7 +255,6 @@ if (confirmPassword) {
     }
   }
 }
-
 
 if (signUpFirst) {
   signUpFirst.addEventListener("blur", validateFirstName);
@@ -295,10 +290,17 @@ if (signUpForm) {
     var validPassword = validatePassword();
     var validConfirmPassword = validateConfirmPassword();
 
-    if (validFirstName && validLastName && validEmail && validPhone && validPassword && validConfirmPassword) {
+    if (
+      validFirstName &&
+      validLastName &&
+      validEmail &&
+      validPhone &&
+      validPassword &&
+      validConfirmPassword
+    ) {
       window.location.href = "continue.html";
     }
-  })
+  });
 }
 /*---------------------------- Continue Sign Up Page ----------------------------*/
 
@@ -308,45 +310,43 @@ function updateFileName(input, labelId) {
   if (files && files.length > 0) {
     label.innerHTML = files[0].name;
   } else {
-    label.innerHTML = 'Choose a file&hellip;';
+    label.innerHTML = "Choose a file&hellip;";
   }
 }
 
-
-var continueBtn = document.getElementById('continue');
+var continueBtn = document.getElementById("continue");
 
 if (continueBtn) {
-  continueBtn.addEventListener('click', function (e) {
+  continueBtn.addEventListener("click", function (e) {
     e.preventDefault();
     window.location.href = "registrationSuccess.html";
   });
 }
 
-
 /*---------------------------- Forget Password Page ----------------------------*/
 
-var forgetpasswordForm = document.getElementById('forgetpasswordForm');
-var emailPhoneInput = document.getElementById('forgetPassword');
+var forgetpasswordForm = document.getElementById("forgetpasswordForm");
+var emailPhoneInput = document.getElementById("forgetPassword");
 
 if (forgetpasswordForm && emailPhoneInput) {
   function validateForgetForm() {
     const emailPhoneValue = emailPhoneInput.value;
-    const forgetError = document.getElementById('forgetEmailPhoneError');
+    const forgetError = document.getElementById("forgetEmailPhoneError");
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phonePattern = /^01[0-2,5]{1}[0-9]{8}$/;
 
-    forgetError.textContent = '';
+    forgetError.textContent = "";
 
     if (emailPattern.test(emailPhoneValue)) {
       return true;
     } else if (phonePattern.test(emailPhoneValue)) {
       return true;
     } else if (isNaN(emailPhoneValue)) {
-      forgetError.textContent = 'Please enter a valid email';
+      forgetError.textContent = "Please enter a valid email";
       forgetError.style.display = "block";
       return false;
     } else {
-      forgetError.textContent = 'Please enter a valid phone number';
+      forgetError.textContent = "Please enter a valid phone number";
       forgetError.style.display = "block";
       return false;
     }
@@ -362,26 +362,27 @@ if (forgetpasswordForm && emailPhoneInput) {
   });
 }
 
-
 /*---------------------------- Otp Page ----------------------------*/
 
-var otpForm = document.getElementById('otpForm');
+var otpForm = document.getElementById("otpForm");
 
 if (otpForm) {
-  const otpInputs = document.querySelectorAll('.otpInputs');
-  const submitButton = document.querySelector('.signInSubmit input[type="submit"]');
+  const otpInputs = document.querySelectorAll(".otpInputs");
+  const submitButton = document.querySelector(
+    '.signInSubmit input[type="submit"]'
+  );
 
-  window.addEventListener('load', () => {
-    otpInputs.forEach(input => {
-      input.value = '';
+  window.addEventListener("load", () => {
+    otpInputs.forEach((input) => {
+      input.value = "";
       input.disabled = true;
     });
     otpInputs[0].disabled = false;
-    submitButton.classList.add('disabled');
+    submitButton.classList.add("disabled");
   });
 
   otpInputs.forEach((input, index) => {
-    input.addEventListener('input', () => {
+    input.addEventListener("input", () => {
       if (input.value.length === 1 && index < otpInputs.length - 1) {
         otpInputs[index + 1].disabled = false;
         otpInputs[index + 1].focus();
@@ -389,19 +390,19 @@ if (otpForm) {
       checkAllInputs();
     });
 
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace') {
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace") {
         if (input.value.length === 0 && index > 0) {
-          otpInputs[index - 1].value = '';
+          otpInputs[index - 1].value = "";
           otpInputs[index - 1].focus();
           otpInputs[index].disabled = true;
         } else {
-          input.value = '';
+          input.value = "";
         }
       }
     });
 
-    input.addEventListener('focus', () => {
+    input.addEventListener("focus", () => {
       if (index > 0 && otpInputs[index - 1].value.length === 0) {
         otpInputs[index - 1].focus();
       }
@@ -409,37 +410,42 @@ if (otpForm) {
   });
 
   function checkAllInputs() {
-    const allFilled = [...otpInputs].every(input => input.value.length === 1);
+    const allFilled = [...otpInputs].every((input) => input.value.length === 1);
     if (allFilled) {
-      submitButton.classList.remove('disabled');
+      submitButton.classList.remove("disabled");
     } else {
-      submitButton.classList.add('disabled');
+      submitButton.classList.add("disabled");
     }
     return allFilled;
   }
 
   otpForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (!submitButton.classList.contains('disabled') && checkAllInputs()) {
+    if (!submitButton.classList.contains("disabled") && checkAllInputs()) {
       window.location.href = "changePass.html";
     }
   });
 }
 
-
 /*---------------------------- Change Password Page ----------------------------*/
 
-var changePasswordForm = document.getElementById('changePasswordForm');
-var changePasswordInput = document.getElementById('changePassword');
-var changePasswordError = document.getElementById('changePasswordError');
-var changePasswordConfirmInput = document.getElementById('changePasswordConfirm');
-var changePasswordConfirmError = document.getElementById('changePasswordConfirmError');
+var changePasswordForm = document.getElementById("changePasswordForm");
+var changePasswordInput = document.getElementById("changePassword");
+var changePasswordError = document.getElementById("changePasswordError");
+var changePasswordConfirmInput = document.getElementById(
+  "changePasswordConfirm"
+);
+var changePasswordConfirmError = document.getElementById(
+  "changePasswordConfirmError"
+);
 
 if (changePasswordInput) {
   function validatePassword() {
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
+    var passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/;
     if (!passwordRegex.test(changePasswordInput.value)) {
-      changePasswordError.textContent = "Password must be at least 5 characters long and contain a number";
+      changePasswordError.textContent =
+        "Password must be at least 5 characters long and contain a number";
       changePasswordError.style.display = "block";
       return false;
     } else {
@@ -448,7 +454,7 @@ if (changePasswordInput) {
       return true;
     }
   }
-  changePasswordInput.addEventListener('blur', validatePassword);
+  changePasswordInput.addEventListener("blur", validatePassword);
 }
 
 if (changePasswordConfirmInput) {
@@ -463,11 +469,11 @@ if (changePasswordConfirmInput) {
       return true;
     }
   }
-  changePasswordConfirmInput.addEventListener('blur', validateConfirmPassword);
+  changePasswordConfirmInput.addEventListener("blur", validateConfirmPassword);
 }
 
 if (changePasswordForm) {
-  changePasswordForm.addEventListener('submit', function (e) {
+  changePasswordForm.addEventListener("submit", function (e) {
     e.preventDefault();
     var validChangePassword = validatePassword();
     var validChangeConfirmPassword = validateConfirmPassword();
@@ -478,17 +484,15 @@ if (changePasswordForm) {
   });
 }
 
-
 /*---------------------------- Success Page ----------------------------*/
-var loginButton = document.getElementById('loginButton');
+var loginButton = document.getElementById("loginButton");
 
 if (loginButton) {
-  loginButton.addEventListener('click', function (e) {
+  loginButton.addEventListener("click", function (e) {
     e.preventDefault();
     window.location.href = "index.html";
   });
 }
-
 
 /*---------------------------- Drag & Drop Image ----------------------------*/
 
@@ -552,7 +556,6 @@ if (dropArea) {
   }
 }
 
-
 /*---------------------------- Sidebar ----------------------------*/
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -580,7 +583,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 
 /*---------------------------- Calender ----------------------------*/
 
@@ -611,7 +613,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 /*---------------------------- Settings ----------------------------*/
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -641,54 +642,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*---------------------------- Sliders ----------------------------*/
-
-var wow = new WOW({
-  mobile: false // trigger animations on mobile devices (default is true)
-});
-wow.init();
 
 
+/*---------------------------- Scan Button  ---------------------------*/
+document.addEventListener('DOMContentLoaded', function () {
+  var nextScanBtn = document.getElementById("nextScan");
+  var scanXray = document.querySelector(".scan_xray");
+  var nextXray = document.querySelector(".next__xray");
+  var backBtn = document.getElementById("backBtn");
 
-
-$(document).ready(function () {
-  // slick slider active 
-  $(".main_home_slider").slick({
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
-    nextArrow: "<i class='fa fa-angle-right nextprevright'></i>"
+  nextScanBtn.addEventListener('click', function () {
+    scanXray.classList.add("hide");
+    nextXray.classList.remove("hide");
   });
 
-  $(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    loop: true,
-    center: true,
-    dots: false,
-    nav: true,
-    navText: [
-      '<i class="fa-solid fa-chevron-left"></i>',
-      '<i class="fa-solid fa-chevron-right"></i>'
-    ],
-    responsive: {
-      0: {
-        items: 1,
-        margin: 3 // Adjust margin for mobile view
-      },
-      768: {
-        items: 2,
-        margin: 3 // Adjust margin for tablet view
-      },
-      1200: {
-        items: 3,
-        margin: 3 // Adjust margin for desktop view
-      }
-    }
+  backBtn.addEventListener('click', function () {
+    scanXray.classList.remove("hide");
+    nextXray.classList.add("hide");
   });
 });
-
-
-
