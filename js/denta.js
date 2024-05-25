@@ -661,3 +661,56 @@ document.addEventListener('DOMContentLoaded', function () {
     nextXray.classList.add("hide");
   });
 });
+
+
+/*---------------------------- Change Password & Contact Information  ---------------------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  const changeContact = document.querySelector('.change__contact');
+  const changePassDiv = document.querySelector('.changePass');
+  const contactInformationDiv = document.querySelector('.contactInformation');
+  const goToChangePass = document.querySelector('.goToChangePass');
+  const goToContactInformation = document.querySelector('.goToContactInformation');
+  const backIcons = document.querySelectorAll('.backIcon');
+
+  changePassDiv.classList.add('hidden');
+  contactInformationDiv.classList.add('hidden');
+
+  goToChangePass.addEventListener('click', function() {
+    changePassDiv.classList.remove('hidden');
+    changeContact.classList.add('hidden');
+  });
+
+  goToContactInformation.addEventListener('click', function() {
+    contactInformationDiv.classList.remove('hidden');
+    changeContact.classList.add('hidden');
+  });
+
+  backIcons.forEach(function(backIcon) {
+    backIcon.addEventListener('click', function() {
+      changePassDiv.classList.add('hidden');
+      contactInformationDiv.classList.add('hidden');
+      changeContact.classList.remove('hidden');
+    });
+  });
+});
+
+
+const optionElements = document.querySelectorAll('.options');
+
+optionElements.forEach(function(option) {
+  option.addEventListener('click', function(event) {
+    event.stopPropagation();
+
+    const dropdown = option.closest('.contactOne').querySelector('.dropDown');
+
+    dropdown.classList.toggle('show');
+  });
+});
+
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropDown').forEach(function(dropdown) {
+    dropdown.classList.remove('show');
+  });
+});
+
+
