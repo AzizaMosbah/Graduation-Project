@@ -714,3 +714,23 @@ document.addEventListener('click', function() {
 });
 
 
+
+
+
+var newEmailAndNumber = document.querySelector('.newEmailAndNumber');
+var contactFour = document.querySelector('.contactFour');
+
+contactFour.addEventListener('click', function() {
+    newEmailAndNumber.classList.toggle('hidden');
+});
+
+
+
+
+
+
+
+
+document.getElementById('logoutButton').addEventListener('click', function() {
+  window.location.href = 'signin.html';
+});
