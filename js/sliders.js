@@ -15,41 +15,42 @@ $(document).ready(function () {
   });
 
   // slick slider active
-  $(".main_home_slider").slick({
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
-    nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
-  });
+  // $(".main_home_slider").slick({
+  //   dots: false,
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
+  //   nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
+  // });
 
-  $(".testimonial-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    loop: true,
-    center: true,
-    dots: false,
-    nav: true,
-    navText: [
-      '<i class="fa-solid fa-chevron-left"></i>',
-      '<i class="fa-solid fa-chevron-right"></i>',
-    ],
-    responsive: {
-      0: {
-        items: 1,
-        margin: 3, // Adjust margin for mobile view
-      },
-      768: {
-        items: 2,
-        margin: 3, // Adjust margin for tablet view
-      },
-      1200: {
-        items: 3,
-        margin: 3, // Adjust margin for desktop view
-      },
-    },
-  });
+  // $(".testimonial-carousel").owlCarousel({
+  //   autoplay: true,
+  //   smartSpeed: 1000,
+  //   loop: true,
+  //   center: true,
+  //   dots: false,
+  //   nav: true,
+  //   navText: [
+  //     '<i class="fa-solid fa-chevron-left"></i>',
+  //     '<i class="fa-solid fa-chevron-right"></i>',
+  //   ],
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //       margin: 3,
+  //     },
+  //     768: {
+  //       items: 2,
+  //       margin: 3,
+  //     },
+  //     1200: {
+  //       items: 3,
+  //       margin: 3,
+  //     },
+  //   },
+  // });
+
 });
 
 
@@ -80,9 +81,7 @@ $(document).ready(function () {
       }
     }
   });
-});
 
-$(document).ready(function () {
   $('#radiologyCarousel').owlCarousel({
     loop: true,
     margin: 20,

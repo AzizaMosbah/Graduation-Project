@@ -651,15 +651,20 @@ document.addEventListener('DOMContentLoaded', function () {
   var nextXray = document.querySelector(".next__xray");
   var backBtn = document.getElementById("backBtn");
 
-  nextScanBtn.addEventListener('click', function () {
-    scanXray.classList.add("hide");
-    nextXray.classList.remove("hide");
-  });
-
-  backBtn.addEventListener('click', function () {
-    scanXray.classList.remove("hide");
-    nextXray.classList.add("hide");
-  });
+  if (nextScanBtn) {
+    nextScanBtn.addEventListener('click', function () {
+      scanXray.classList.add("hide");
+      nextXray.classList.remove("hide");
+    });
+  }
+  
+  if (backBtn) {
+    backBtn.addEventListener('click', function () {
+      scanXray.classList.remove("hide");
+      nextXray.classList.add("hide");
+    });
+  }
+  
 });
 
 
@@ -672,26 +677,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const goToContactInformation = document.querySelector('.goToContactInformation');
   const backIcons = document.querySelectorAll('.backIcon');
 
-  changePassDiv.classList.add('hidden');
+  if (changePassDiv) {
+    changePassDiv.classList.add('hidden');
   contactInformationDiv.classList.add('hidden');
 
   goToChangePass.addEventListener('click', function() {
     changePassDiv.classList.remove('hidden');
     changeContact.classList.add('hidden');
   });
-
-  goToContactInformation.addEventListener('click', function() {
-    contactInformationDiv.classList.remove('hidden');
-    changeContact.classList.add('hidden');
-  });
-
-  backIcons.forEach(function(backIcon) {
-    backIcon.addEventListener('click', function() {
-      changePassDiv.classList.add('hidden');
-      contactInformationDiv.classList.add('hidden');
-      changeContact.classList.remove('hidden');
+  }
+  
+  if (goToContactInformation) {
+    goToContactInformation.addEventListener('click', function() {
+      contactInformationDiv.classList.remove('hidden');
+      changeContact.classList.add('hidden');
     });
-  });
+  }
+  
+  if (backIcons) {
+    backIcons.forEach(function(backIcon) {
+      backIcon.addEventListener('click', function() {
+        changePassDiv.classList.add('hidden');
+        contactInformationDiv.classList.add('hidden');
+        changeContact.classList.remove('hidden');
+      });
+    });
+  }
+  
 });
 
 
@@ -714,23 +726,20 @@ document.addEventListener('click', function() {
 });
 
 
-
-
-
 var newEmailAndNumber = document.querySelector('.newEmailAndNumber');
 var contactFour = document.querySelector('.contactFour');
 
-contactFour.addEventListener('click', function() {
+if (contactFour) {
+  contactFour.addEventListener('click', function() {
     newEmailAndNumber.classList.toggle('hidden');
 });
 
+}
 
 
-
-
-
-
-
-document.getElementById('logoutButton').addEventListener('click', function() {
-  window.location.href = 'signin.html';
-});
+var logoutButton = document.getElementById('logoutButton');
+if (logoutButton) {
+  logoutButton.addEventListener('click', function() {
+    window.location.href = 'signin.html';
+  });
+}
