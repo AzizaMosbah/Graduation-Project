@@ -82,10 +82,10 @@ nav .logo {
 nav .logo a {
     text-decoration: none;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--primary-color);
-    border: 2.25px solid var(--secondary-color);
-    padding: 5px 10px;
+    /* border: 2.25px solid var(--secondary-color); */
+    /* padding: 5px 10px; */
 }
 
 nav .logo span {
@@ -244,10 +244,11 @@ nav .user span {
     -o-border-radius: 20px;
 }
 
-nav .user h2 {
+nav .user a {
     color: var(--secondary-color);
     font-size: 16px;
     font-weight: 500;
+    text-decoration: none;
 }
 
 /* Start Landing */
@@ -1554,7 +1555,7 @@ textarea {
     min-width: 6%;
     height: calc(100vh - 108.8px);
     object-fit: contain;
-    background-color: #fff;
+    background-color: var(--secondary-color);
     border-radius: 10px;
     margin-right: 15px;
     box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
@@ -1568,7 +1569,7 @@ textarea {
 .sidebar .list {
     height: 100%;
     padding: 20px 0;
-    fill: var(--secondary-color);
+    fill: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1594,8 +1595,8 @@ textarea {
 
 .sidebar .list .icon.active,
 .sidebar .list .icon:hover {
-    fill: #fff;
-    background-color: var(--secondary-color);
+    fill: var(--secondary-color);
+    background-color: #fff;
 }
 
 @media (max-width: 1199px) {
@@ -1760,14 +1761,16 @@ textarea {
 .message__reports,
 .radiology__center,
 .calender,
-.settings {
+.settings,
+.profile {
     width: 100%;
 }
 
 .message__reports .row,
 .radiology__center .row,
 .calender .row,
-.settings .row {
+.settings .row,
+.profile.row {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1780,7 +1783,9 @@ textarea {
 .calender .reports,
 .calender .details,
 .settings .reports,
-.settings .details {
+.settings .details,
+.profile .reports,
+.profile .details {
     height: calc(100vh - 108.8px);
     overflow-y: scroll;
     box-shadow: 1px 1px 6px 0px rgba(0, 105, 95, 0.2);
@@ -2158,21 +2163,30 @@ textarea {
 /*
     Settings
 */
-.settings .reports {
-    width: 25%;
-}
 
 .settings .reports {
     width: 25%;
     overflow-y: visible;
 }
 
+.profile .reports {
+    width: 50%;
+}
+
 .settings .details {
     width: 75%;
     overflow-y: scroll;
 }
+.profile .details {
+    width: 50%;
+}
+.profile .row {
+    display: flex;
+    justify-content: space-between;
 
-.settings .details h3 {
+}
+.settings .details h3,
+.profile .details h3 {
     position: sticky;
     top: 0;
 }
@@ -2206,32 +2220,38 @@ textarea {
     margin-right: 10px;
 }
 
-.settings h4 {
+.settings h4,
+.profile h4 {
     margin: 15px;
     font-size: 20px;
     color: var(--secondary-color);
     text-align: left;
 }
 
-.settings label {
+.settings label,
+.profile label {
     display: inline-block;
     color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
-.settings .details form {
+.settings .details form,
+.profile .details form {
     margin: 0;
 }
 
-.settings .details form div {
+.settings .details form div,
+.profile .details form div {
     margin: 0 15px;
 }
 
-.settings .details form p {
+.settings .details form p,
+.profile .details form p {
     position: relative;
 }
 
-.settings .details form i {
+.settings .details form i,
+.profile .details form i {
     position: absolute;
     top: 25%;
     right: 10px;
@@ -2239,11 +2259,13 @@ textarea {
     cursor: pointer;
 }
 
-.settings .doctor div {
+.settings .doctor div,
+.profile .doctor div {
     position: relative;
 }
 
-.settings .doctor i {
+.settings .doctor i,
+.profile .doctor i {
     position: absolute;
     top: 70%;
     left: 56%;
@@ -3443,4 +3465,159 @@ textarea {
 
 .sendModal .modal{
     overflow-y: scroll;
+}
+
+
+
+
+
+
+
+
+.profile .all__comment {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.profile .comment {
+    max-width: 100%;
+    border: 1px solid #e1e1e1;
+    margin: 0 15px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.profile .comment:not(:last-child) {
+    margin-bottom: 20px;
+    
+}
+.profile .comment .title,
+.profile .comment .reacts__seen {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+    
+}
+.profile .comment .title .img{
+    width: 60px;
+    height: 60px;
+    
+}
+.profile .comment .title .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile .comment .title h4 {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+.profile .img__name,
+.profile .comment .reacts {
+    display: flex;
+    align-items: center;
+}
+.profile .star {
+    border: 1px solid var(--secondary-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.profile .star i {
+    color: #e58e09;
+    margin-right: 5px;
+}
+
+.profile .comment .desc {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.profile .comment .reacts__seen {
+   margin-bottom: 0;
+}
+
+.profile .comment .reacts__seen span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+.profile .comment .heart {
+    margin-right: 20px;
+}
+.profile .comment .heart i {
+    color: red;
+}
+.profile .comment .dislike i {
+    color: var(--primary-color);
+}
+
+.profile .comment .seen {
+    color: #797979;
+}
+
+.profile .information .doctor i {
+    left: 60%;
+}
+
+@media (max-width: 1199px) {
+    .profile .row {
+        flex-direction: column;
+    }
+    .profile .details {
+        width: 100%;
+    }
+    .profile .details:nth-of-type(1) {
+        margin-bottom: 20px;
+    }
+    .profile .details:nth-of-type(2) {
+        margin-bottom: 6rem;
+    }
+    .custom__row {
+        flex-direction: row !important;
+    }
+    .custom__row h3 {
+        width: 50% !important;
+    }
+    .calender .left,
+    .calender .right {
+        width: 100%;
+    }
+
+    .calender .right .information {
+        margin-bottom: 0 !important;
+    }
+    .reportBtn,
+    .sendBtn {
+        margin-bottom: 6rem;
+    }
+    
+}
+@media (max-width: 767px) {
+    .custom__row h3 {
+        font-size: 16px;
+    }
+    .profile .comment .desc,
+    .profile .comment .reacts__seen span,
+    .profile .comment .seen,
+    .profile .star span {
+        font-size: 14px;
+    }
+    
+}
+
+.nav-links ul li:last-of-type {
+    display: none;
+}
+@media (max-width: 550px) {
+    .sidebar .list .icon:last-of-type {
+        display: none;
+    }
+
+    .nav-links ul li:last-of-type {
+        display: block;
+    }
+    
 }
