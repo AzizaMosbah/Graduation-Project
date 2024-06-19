@@ -1543,6 +1543,7 @@ textarea {
 /*------------------------ Sidebar ---------------------------*/
 .services__page {
     width: 100%;
+    height: calc(100vh - 67.2px);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -1868,7 +1869,6 @@ textarea {
 
 .message:hover {
     background-color: #eee;
-    padding: 15px;
 }
 
 .message img {
@@ -2627,10 +2627,11 @@ textarea {
     .message__reports .details,
     .radiology__center .details,
     .calender .details,
-    .settings .details {
+    .settings .details,
+    .scan_xray {
         width: 100%;
         margin-left: 0;
-        margin-bottom: 70px;
+        margin-bottom: 6rem;
     }
 
     .enter__xray .upload__button {
@@ -2651,7 +2652,8 @@ textarea {
     }
 
     .calender .information {
-        height: calc(100vh - 270px);
+        height: fit-content;
+        margin-bottom: 6rem;
     }
 
     .calender .information .row {
@@ -3125,18 +3127,9 @@ textarea {
     max-width: 480px;
     max-height: 90vh;
     text-align: left;
-    display: flex;
     flex-direction: column;
     overflow: hidden;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
     z-index: 1000;
-}
-
-.modal.active {
-    pointer-events: all;
-    opacity: 1;
 }
 
 .modal-close {
@@ -3182,32 +3175,29 @@ textarea {
 }
 
 .modal-overlay {
-    transition: opacity 0.2s ease-out;
-    background: rgba(15, 23, 42, 0.8);
+    background-color: rgba(0,0,0,0.4);
     position: fixed;
-    opacity: 0;
     bottom: 0;
     right: 0;
     left: 0;
     top: 0;
     z-index: 999;
-    pointer-events: none;
-}
-
-.modal-overlay.active {
-    pointer-events: all;
-    opacity: 0.5;
 }
 
 .addPhoneNumber,
-.addEmail {
+.addEmail,
+.sendModal,
+.new {
     text-align: center;
     max-width: 640px;
     padding: 32px;
+    display: none;
 }
 
 .addPhoneNumber h1,
-.addEmail h1 {
+.addEmail h1,
+.sendModal h1,
+.new h1 {
     font-size: 19.2px;
     font-weight: 700;
     color: var(--secondary-color);
@@ -3245,6 +3235,18 @@ textarea {
     width: 60%;
 }
 
+.modal-content div:not(:last-child) {
+    margin-bottom: 15px;
+}
+.modal-content .age__date{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.modal-content textarea{
+    width: 100%;
+  min-height: 100px;
+}
 
 /*______________ Radiology _______________*/
 
@@ -3253,16 +3255,19 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .radiologyBtn .btn {
     width: 100%;
     margin: 0 15px;
 }
+
 .upload {
     padding-bottom: 2rem;
 }
-.upload .row{
+
+.upload .row {
     width: 100%;
     height: 300px;
     margin-bottom: 1rem !important;
@@ -3271,11 +3276,12 @@ textarea {
 .upload .upload_xray {
     width: 100%;
     height: 100%;
-   margin: 15px;
-   border: 2px dashed #eee;
-   position: relative;
-   border-radius: 15px;
+    margin: 15px;
+    border: 2px dashed #eee;
+    position: relative;
+    border-radius: 15px;
 }
+
 .upload .upload_xray .all {
     position: absolute;
     top: 50%;
@@ -3283,11 +3289,13 @@ textarea {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .upload .upload_xray p {
     color: var(--secondary-color);
     font-size: 24px;
     font-weight: 500;
 }
+
 .upload .upload_xray svg {
     stroke: var(--secondary-color);
     width: 50px;
@@ -3315,12 +3323,124 @@ textarea {
     display: none;
     margin: 0 !important;
 }
+
 .informationLogo {
     width: 50%;
     margin: auto;
     margin-bottom: 1.5rem;
 }
+
 .informationLogo img {
     width: 100%;
-   
+
+}
+
+.report__information {
+    overflow-y: scroll !important;
+    height: calc(100vh - 163.8px) !important;
+}
+
+.calender .left {
+    width: 40%;
+    
+}
+.calender .left .reports {
+    width: 100%;
+}
+.calender .right {
+    width: 60%;
+}
+.calender .right .information {
+    width: 100%;
+}
+
+.addBtn, 
+.reportBtn,
+.backBtn,
+.sendBtn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.addBtn svg, 
+.reportBtn svg,
+.backBtn svg,
+.sendBtn svg {
+    width: 16px;
+    fill: #fff;
+    margin-left: 10px;
+}
+.backBtn svg {
+    margin-right: 10px;
+    margin-left: 0;
+}
+.addBtn button, 
+.reportBtn button,
+.backBtn button,
+.sendBtn button {
+    width: 100% !important;
+    background-color: var(--secondary-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reportBtn,
+.sendBtn {
+    margin-left: 10px;
+}
+
+.leftOne,
+.leftTwo {
+    display: block; 
+    transition: display 0.3s ease-in-out;
+}
+
+.leftTwo,
+.sendBtn {
+    display: none; 
+}
+
+
+.leftTwo .all {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.leftTwo .all img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.recent__modal .img__name .img {
+    width: 60px;
+    height: 60px;
+}
+.recent__modal .img__name img {
+    max-width: 100%;
+    width: 100% !important;
+    height: 100%;
+}
+.recent__modal .message {
+    padding: 10px;
+}
+.recent__modal .message h6 {
+    font-size: 14px;
+}
+.recent__modal .message p {
+    font-size: 12px;
+}
+.recent__modal h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.sendModal .modal{
+    overflow-y: scroll;
 }

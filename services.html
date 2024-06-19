@@ -497,7 +497,7 @@
       <div class="content calender inactive">
         <div class="row">
           <div class="row new__send">
-            <button class="btn">New<i class="fa-solid fa-plus"></i></button>
+            <button class="btn" id="newBtn">New<i class="fa-solid fa-plus"></i></button>
             <button class="btn">Send<i class="fa-solid fa-bell"></i></button>
           </div>
           <div class="search__container">
@@ -941,7 +941,7 @@
                         <i class="fa-solid fa-square-plus"></i>
                         <span>Add New Contact</span>
                       </div>
-                      <div class="newEmailAndNumber hidden">
+                      <div class="newEmailAndNumber">
                         <p id="openAddNumber">Add New Phone Number</p>
                         <p id="openAddEmail">Add New Email Address</p>
                       </div>
@@ -1103,133 +1103,199 @@
           <h2>You have been logged out</h2>
           <div class="icon" id="logoutButton">
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
-            style="enable-background: new 0 0 512 512" xml:space="preserve">
-            <g>
-              <path d="M350.2,327.5c-13.8-1.4-25.5,9.5-25.5,23V375c0,12.7-10.4,23.1-23.1,23.1l-65.3-4.2V95.2c0-19.8-12.6-37.4-31.3-43.9
+              style="enable-background: new 0 0 512 512" xml:space="preserve">
+              <g>
+                <path d="M350.2,327.5c-13.8-1.4-25.5,9.5-25.5,23V375c0,12.7-10.4,23.1-23.1,23.1l-65.3-4.2V95.2c0-19.8-12.6-37.4-31.3-43.9
             l-7.1-2.4H292c12.7,0,23.1,10.4,23.1,23.1v21.8c0,12.1,8.7,23.1,20.7,24.4c13.8,1.4,25.5-9.5,25.5-23V72.1
             c0-38.3-31.1-69.4-82.7-69.4H126.9C66.8,2.6,18,51.4,18,111.5c0,0,0,290.9,0,291.2c0,29.2,12.8,58.9,33.3,79.6
             c35.1,35.4,94.6,25.9,139.9,27.3c25.2-0.6,45-21.9,45-47l0-22.4l65.3,4.2c38.3,0,69.4-31.1,69.4-69.4v-23.1
             C370.9,339.8,362.2,328.7,350.2,327.5z" />
-              <path d="M489.3,211.2L414.1,136c-5.4-5.4-13.5-7-20.5-4.1c-7,2.9-11.6,9.8-11.6,17.4v56.4h-75.2c-10.4,0-18.8,8.4-18.8,18.8
+                <path d="M489.3,211.2L414.1,136c-5.4-5.4-13.5-7-20.5-4.1c-7,2.9-11.6,9.8-11.6,17.4v56.4h-75.2c-10.4,0-18.8,8.4-18.8,18.8
             c0,10.4,8.4,18.8,18.8,18.8H382v56.4c0,7.6,4.6,14.4,11.6,17.4c7,2.9,15.1,1.3,20.5-4.1l75.2-75.2
             C496.6,230.4,496.6,218.5,489.3,211.2z" />
-            </g>
-          </svg>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-<!--___________________________________ Modals ___________________________________-->
-<!-- Add Phone Number -->
-<div class="addPhoneNumber">  
-  <div id="overlay" class="modal-overlay"></div>
-  
-  <div id="modal" class="modal">
-    <div class="modalHeader">
-      <div class="modal-close" id="close-modal-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="black" />
-        </svg>
+  <!--___________________________________ Modals ___________________________________-->
+  <!-- Add Phone Number -->
+  <div class="addPhoneNumber">
+    <div id="overlay" class="modal-overlay"></div>
+    <div id="modal" class="modal">
+      <div class="modalHeader">
+        <div class="modal-close" id="close-modal-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+              fill="black" />
+          </svg>
+        </div>
+        <div class="modal-title">
+          <h1>New Phone Number</h1>
+        </div>
       </div>
-      <div class="modal-title">
-        <h1>New Phone Number</h1>
+      <div class="modal-content">
+        <img src="images/phone.png" alt="Phone Image">
+        <p>A 6-digit code was sent to +201 ********* </p>
+        <p>Enter it within 2 minutes</p>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+        <input type="submit" value="Submit" class="btn" id="submit-btn">
       </div>
-    </div>
-    <div class="modal-content">
-      <img src="images/phone.png" alt="Phone Image">
-      <p>A 6-digit code was sent to +201 ********* </p>
-      <p>Enter it within 2 minutes</p>
-      <input type="text" id="phone" placeholder="Enter your phone number">
-      <input type="submit" value="Submit" class="btn" id="submit-btn">
     </div>
   </div>
-</div>
 
-<!-- Add Email -->
-<div class="addEmail">
-  <div id="overlayEmail" class="modal-overlay"></div>
-  
-  <div id="modalEmail" class="modal">
-    <div class="modalHeader">
-      <div class="modal-close" id="close-modal-email-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z" fill="black" />
-        </svg>
+  <!-- Add Email -->
+  <div class="addEmail">
+    <div id="overlayEmail" class="modal-overlay"></div>
+    <div id="modalEmail" class="modal">
+      <div class="modalHeader">
+        <div class="modal-close" id="close-modal-email-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+              fill="black" />
+          </svg>
+        </div>
+        <div class="modal-title">
+          <h1>New Email Address</h1>
+        </div>
       </div>
-      <div class="modal-title">
-        <h1>New Email Address</h1>
+      <div class="modal-content">
+        <img src="images/email.png" alt="Email Image">
+        <p>Please enter your new email address</p>
+        <input type="email" id="email" placeholder="Enter your Email Address">
+        <input type="submit" value="Submit" class="btn" id="submit-email-btn">
       </div>
-    </div>
-    <div class="modal-content">
-      <img src="images/email.png" alt="Email Image">
-      <p>Please enter your new email address</p>
-      <input type="email" id="email" placeholder="Enter your Email Address">
-      <input type="submit" value="Submit" class="btn" id="submit-email-btn">
     </div>
   </div>
-</div>
-  
-  
+
+  <!-- Calender - New -->
+  <div class="new">
+    <div id="overlayNew" class="modal-overlay"></div>
+    <div id="modalNew" class="modal">
+      <div class="modalHeader">
+        <div class="modal-close" id="close-modal-new-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976311 12.6834 -0.0976311 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976311 0.683417 -0.0976311 0.292893 0.292893C-0.0976311 0.683417 -0.0976311 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976311 12.6834 -0.0976311 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z"
+              fill="black" />
+          </svg>
+        </div>
+        <div class="modal-title">
+          <h1>Patient Info</h1>
+        </div>
+      </div>
+      <div class="modal-content">
+        <div class="name__email">
+          <input type="text" placeholder="Full Name or E-mail">
+        </div>
+        <div class="phone__number">
+          <input type="text" placeholder="Phone Number">
+        </div>
+        <div class="age__date">
+          <input type="text" placeholder="Age">
+          <input type="date" placeholder="Date">
+        </div>
+        <div class="time">
+          <input type="time" value="13:30">
+        </div>
+        <div class="info">
+          <textarea placeholder="Message"></textarea>
+        </div>
+        <div class="new__button">
+          <input class="btn" type="submit" value="Confirm">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/jquery.min.js"></script>
 
   <!-- <script defer src="js/googleapis.js"></script> -->
   <script src="js/denta.js"></script>
   <script>
-   document.addEventListener('DOMContentLoaded', function () {
-  // Phone Number Modal
-  const openPhoneNumberBtn = document.getElementById('openAddNumber');
-  const closeModalBtn = document.getElementById('close-modal-btn');
-  const modal = document.getElementById('modal');
-  const overlay = document.getElementById('overlay');
+    document.addEventListener('DOMContentLoaded', function () {
+      // Phone Number Modal
+      const openPhoneNumberBtn = document.getElementById('openAddNumber');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const modal = document.getElementById('modal');
+      const overlay = document.getElementById('overlay');
 
-  openPhoneNumberBtn.addEventListener('click', function () {
-    modal.classList.add('active');
-    overlay.classList.add('active');
-  });
+      openPhoneNumberBtn.addEventListener('click', function () {
+        modal.style.display = 'block';
+        overlay.style.display = 'block';
+      });
 
-  closeModalBtn.addEventListener('click', function () {
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-  });
+      closeModalBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+      });
 
-  overlay.addEventListener('click', function () {
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-  });
+      overlay.addEventListener('click', function () {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+      });
 
-  document.getElementById('submit-btn').addEventListener('click', function () {
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-  });
+      document.getElementById('submit-btn').addEventListener('click', function () {
+        modal.style.display = 'none';
+        overlay.style.display = 'none';
+      });
 
-  // Email Modal
-  const openAddEmailBtn = document.getElementById('openAddEmail');
-  const closeModalEmailBtn = document.getElementById('close-modal-email-btn');
-  const modalEmail = document.getElementById('modalEmail');
-  const overlayEmail = document.getElementById('overlayEmail');
+      // Email Modal
+      const openAddEmailBtn = document.getElementById('openAddEmail');
+      const closeModalEmailBtn = document.getElementById('close-modal-email-btn');
+      const modalEmail = document.getElementById('modalEmail');
+      const overlayEmail = document.getElementById('overlayEmail');
 
-  openAddEmailBtn.addEventListener('click', function () {
-    modalEmail.classList.add('active');
-    overlayEmail.classList.add('active');
-  });
+      openAddEmailBtn.addEventListener('click', function () {
+        modalEmail.style.display = 'block';
+        overlayEmail.style.display = 'block';
+      });
 
-  closeModalEmailBtn.addEventListener('click', function () {
-    modalEmail.classList.remove('active');
-    overlayEmail.classList.remove('active');
-  });
+      closeModalEmailBtn.addEventListener('click', function () {
+        modalEmail.style.display = 'none';
+        overlayEmail.style.display = 'none';
+      });
 
-  overlayEmail.addEventListener('click', function () {
-    modalEmail.classList.remove('active');
-    overlayEmail.classList.remove('active');
-  });
+      overlayEmail.addEventListener('click', function () {
+        modalEmail.style.display = 'none';
+        overlayEmail.style.display = 'none';
+      });
 
-  document.getElementById('submit-email-btn').addEventListener('click', function () {
-    modalEmail.classList.remove('active');
-    overlayEmail.classList.remove('active');
-  });
+      document.getElementById('submit-email-btn').addEventListener('click', function () {
+        modalEmail.style.display = 'none';
+        overlayEmail.style.display = 'none';
+      });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const newBtn = document.getElementById('newBtn');
+    const modalNew = document.getElementById('modalNew');
+    const overlayNew = document.getElementById('overlayNew');
+    const closeModalNewBtn = document.getElementById('close-modal-new-btn');
+
+    newBtn.addEventListener('click', function () {
+        modalNew.parentElement.style.display = 'block';
+        overlayNew.style.display = 'block';
+    });
+
+    closeModalNewBtn.addEventListener('click', function () {
+        modalNew.parentElement.style.display = 'none';
+        overlayNew.style.display = 'none';
+    });
+
+    overlayNew.addEventListener('click', function () {
+        modalNew.parentElement.style.display = 'none';
+        overlayNew.style.display = 'none';
+    });
 });
+
+
   </script>
 </body>
 
