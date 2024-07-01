@@ -3260,7 +3260,11 @@ textarea {
 }
 
 .modal-content div:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+}
+
+.modal-content div:hover {
+    background-color: #fff;
 }
 .modal-content .age__date{
     display: flex;
@@ -3622,4 +3626,43 @@ textarea {
         display: block;
     }
     
+}
+
+
+
+.upload_xray {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #265073;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.upload_xray .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload_xray p {
+    margin: 0;
+    color: #265073;
+}
+.upload_xray svg {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#fileInput {
+    display: none;
+}
+.upload_xray img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
